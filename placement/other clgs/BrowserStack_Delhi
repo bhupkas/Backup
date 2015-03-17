@@ -1,0 +1,27 @@
+http://www.geeksforgeeks.org/browserstack-written-test-3/
+
+
+1) Find sum of digits of n!. n<2000
+Use biginteger class in java or directly code in python, as it does not overflow in python. Just divide current result by 10 if it is divisible by 10.
+2)
+Given a string and a Regular Expression pattern, give the number of the times the pattern occurs in the string. RegEx symbols mean as follows:
+. - 2 occurrences of the previous character, + - 4 occurrences of previous character, * - more than 5 occurrences of the previous character
+Sample Input (Plaintext Link)
+5
+aaaaaannndnnnnnnfffhfhhgjjjwkkkllclc
+a.
+n+
+a*
+an.
+a.d.
+Sample Output (Plaintext Link)
+5
+3
+2
+1
+0
+Even if you are not able to solve the problem, print the output for the sample test case. The same output is accepted for 3 hidden test cases
+
+Somewhere else
+
+http://www.geeksforgeeks.org/browserstack-placement-paper/

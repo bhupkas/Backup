@@ -1,0 +1,7 @@
+
+There are W white balls and B black balls. Once, the magician removes two balls. If the balls are in the same color, he will put back one white ball. Otherwise, he will put back a black ball. He does this until there is only one ball. Given W and B, we are to determine the color of the last ball. output 1 for black and 0 for white.
+Limits:
+0≤W≤10^9 0≤B≤10^9
+
+Input : T : no of test cases (T <= 10^4)
+		W and B for every test case

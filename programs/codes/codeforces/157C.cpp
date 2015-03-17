@@ -1,0 +1,25 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+int main()
+{
+	string str1,str2,str3;
+	cin >> str3 >> str2;
+	for(int i = 0 ; i < str2.size() ; i++)	str1.push_back('#');
+	for(int i = 0 ; i < str3.size() ; i++)	str1.push_back(str3[i]);
+	for(int i = 0 ; i < str2.size() ; i++)	str1.push_back('#');
+	int com = 0;
+	com = 0;
+	int te = 0;
+	for(int i = 0 ; i <= str1.size() - str2.size() ; i++)
+	{
+		te = 0;
+		for(int j = 0 ; j < str2.size() ; j++)	if(str2[j] == str1[i + j])	te++;
+		com = max(te , com);
+	}
+	cout << str2.size() - com << endl;
+	return 0;
+}

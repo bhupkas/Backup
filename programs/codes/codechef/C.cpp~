@@ -1,0 +1,38 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+bool isPrime(int n)
+{	
+	for(int i = 2 ; i * i <= n ; ++i)
+		if(n % i == 0)	return false;
+	return true;
+}	
+
+int main()
+{
+	int t;
+	int n;
+	cin >> t;
+	while(t--)
+	{	
+		cin >> n;
+		if(n == 2 || n == 17 )	
+		{
+			puts("Mike");	
+			continue;
+		}
+		if(n == 16 || n == 34 || n == 289)
+		{
+			puts("TOm");
+			continue;
+		}
+		if(isPrime(n))	puts("Tom");
+		else		puts("Mike");
+	}
+	return 0;
+}

@@ -1,0 +1,17 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+int main()
+{
+	int t;
+	int n;
+	cin >> t;
+	while(t--)
+	{
+		
+	}
+	return 0;
+}

@@ -1,0 +1,41 @@
+AMAZON
+Harry and Snape
+Given a square matrix
+DDDVD
+DDVDD
+DVVDD
+DVDVD
+DDDDD
+
+harry has to move from top left to bottom right of the matrix. If he goes to V, he is killed. Find the shortest path to do so. If path is not possible print -1.
+
+Mobile digits
+On a traditional mobile keypad
+abc-2
+def-3
+.
+.
+.
+.
+wxyz-9
+
+given an array word convert it into digits.
+eg
+amazon  -  262966
+run   -    786
+sun   -    786
+
+Display them in (ascending/descending) order of numbers. If the number of two words are equal then print the words in (ascending/descending) order of words.
+
+INPUT
+run
+sun
+amazon
+
+OUTPUT
+amazon 262966
+run 786
+sun 786
+
+
+http://www.geeksforgeeks.org/amazon-interview-set-119-campus-internship/

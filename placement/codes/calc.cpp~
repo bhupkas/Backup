@@ -1,0 +1,79 @@
+using namespace std;
+
+#include "bits/stdc++.h"
+
+typedef long long LL;
+
+#define BINT (LL)(1e18)
+
+bool B[15];
+
+LL dp[1000005];
+
+bool N[1000005];
+
+vector < int > F[1000005];
+
+void pre()
+{
+        for(int i = 2 ; i <= 1000001 ; ++i)
+                for(int j = 2 ; i*j <= 1000001 ; ++j)
+                        F[i*j].push_back(i);
+}
+
+int dig(LL num)
+{
+        int re = 0;
+        while(num)      num /= 10  , re++;
+        return re;
+}
+
+LL recur(int num)
+{       
+        if(dp[num]!=BINT)      return dp[num];
+        LL re = BINT;
+        if(N[num])      re = min(re , (LL) dig(num));
+        for(int i = 0 ; i < F[num].size() ; ++i)
+                re = min(re , recur(F[num][i]) + recur(num / (F[num][i])) + 1);
+        return dp[num] = re ;
+}
+
+int main()
+{
+        pre();
+        int t;
+        int n;
+        cin >> t;
+        int temp;
+        for(int tc = 1 ; tc <= t ; tc++)
+        {       
+                for(int i = 0 ; i < 10 ; ++i)
+                {
+                        cin >> temp;
+                        B[i] = (bool)temp;
+                }    
+                cin >> n;
+                memset(N,false,sizeof(N));
+                for(int i = 0 ; i <= n ; ++i)
+                {
+                        N[i] = true;
+                        int foo = i;
+                        while(foo)      
+                        {
+                                if(!B[foo%10])  
+                                {
+                                        N[i] =false;
+                                        break;
+                                }
+                                foo /= 10;
+                        }                                               
+                }
+                for(int i = 0 ; i <= n ; ++i)   dp[i] = BINT;
+                dp[n] = recur(n);
+                dp[n]++;
+                printf("Case #%d: ",tc);
+                if(dp[n] == BINT)        puts("Impossible");
+                else    cout << dp[n] << endl;
+        }
+        return 0;
+}

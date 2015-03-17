@@ -1,0 +1,66 @@
+Amazon:
+Application: 
+Analyzing and study of orders at amazon ¡ú business and market perspectives
+
+Challenges:
+Designing the complete process of DataCube Generation Services where orders at Amazon may reach to millions in a day.
+
+
+IBM Intern:
+
+My task was to study and explore opportunities for further optimization to the code base developed by Scientists at IBM TJ Watson lab for BFS of large random graph on BlueGene/P. 2^38 vertices with average degree of 16.
+
+I did two major optimizations-
+
+1) Number of vertices in start and end levels of BFS are negligible as compared to middle levels (Fig 1).
+- Implemented a dynamic strategy for row communication based on no. of vertices visited in each level.
+- 30% gain in performance by sending the index numbers rather than whole bitmap
+
+2) Edge traversal for large problem size when run on less nodes takes more than 65% of total time of BFS.
+- Observed that only 20% of edges decompressed are actually used in BFS.
+- 5-10% gain in performance for problems run on less number of nodes.
+
+Other details are confidential.
+
+Application: 
+Large scale graph exploration finds application in Social Networks, and Medical informatics.
+
+Challenges:
+Study of a large code base of more than 6000 lines. 
+The performance scales linearly with the number of graph vertices. A big challenge!
+
+
+SURGE
+49 metabolic and non-metabolic pathways for Gallus gallus (chicken) in
+KEGG database.
+
+Application:
+To test genes present at any organ by factoring down the possibilities.
+
+Challenges:
+Large size of genome  ~millions of length (gene bases)
+
+
+
+
+
+
+
+Winter School
+Best Part: 
+1) Integrated two classifiers => Adaboost as feature extraction ¡ú SVM as classification (using weighted voting of classifiers)
+2) Came up with new features-
+Frequency at which energy is maximum in spectogram to distinguish Happy and Angry (2nd best feature)
+fbank ? came up as best feature to distinguish sad from other emotions.
+
+Applications:
+human-robotics interfaces, forensics, smart call centers, 
+
+Challenges:
+1) Speech and emotion type varies with regions and languages. So, testing and training sets has to be of same types (languages)
+
+Future work:
+To build on real data
+
+Thesis
+

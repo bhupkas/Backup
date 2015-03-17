@@ -1,0 +1,23 @@
+using namespace std;
+
+#include "bits/stdc++.h"
+
+string str;
+
+int main()
+{
+        cin >> str;
+        int n = str.size();
+        int i,j;
+        i = n/2 - 1;
+        j = n/2;
+        while(i > 0)
+        {
+                for(int k = i ; k < j ; k += 2)
+                        swap(str[k],str[k+1]);
+                i--;
+                j++;
+        }
+        cout << str << endl;
+        return 0;
+}

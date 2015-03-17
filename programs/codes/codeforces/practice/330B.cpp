@@ -1,0 +1,29 @@
+/* bhupkas */
+
+#include "iostream"
+
+using namespace std;
+
+#define FOR(i,a,b)	for(i=a;i<b;i++)
+
+int main()
+	{
+		int n,m,i,j,x,y;
+		bool B[1005];
+		cin>>n>>m;
+		FOR(i,0,n)	B[i]=true;
+		FOR(i,0,m)
+			{	
+				cin>>x>>y;
+				B[x-1]=false;
+				B[y-1]=false;
+			}
+		FOR(i,0,n)	if(B[i])	break;
+		cout<<n-1<<endl;
+		FOR(j,0,n)
+			{
+				if(j==i)	continue;
+				cout<<j+1<<" "<<i+1<<endl;
+			}
+		return 0;
+	}

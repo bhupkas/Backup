@@ -1,0 +1,55 @@
+I=lambda:map(int, raw_input().split())
+
+def po(a,b):
+	re = 1
+	while b:
+		if b%2 == 1:
+			re = re * a
+		a = a * a
+		b = b / 2
+	return re
+
+def gcd(x, y):
+    if not y: return x
+    return gcd(y, x%y)
+
+def le(nu):
+	i = 0
+	while nu:
+		nu = nu / 10
+		i+=1
+	return i
+
+a = I()
+p = a[0]
+x = a[1]
+if x == 1:
+	print '1'*p
+else :
+	num = po(10,p-1) - x
+	den = 10*x - 1
+	gc = gcd(num,den)
+	num = num / gc
+	den = den / gc
+	ok = False
+	num1 = num
+	den1 = den
+	l1 = le(num)
+	l2 = le(den)
+	i = 2
+	while i <= 10 :
+		print i
+		if(l1 > 1 or l2 > p - 1):
+			break
+		if(l1 == p - 1 and l2 == 1):
+			ok = True
+			break
+		else:
+			den = den1 * i
+			num = num1 * i
+			
+		i += 1
+	if ok == False:
+		print 'Impossible'
+	else:
+		print num * 10 + den

@@ -1,0 +1,17 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+void fill(int m,int n,int tot)
+{
+	
+}
+
+int main()
+{	
+	int t;
+	
+	return 0;	
+}

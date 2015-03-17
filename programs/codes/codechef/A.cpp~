@@ -1,0 +1,19 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+typedef long long LL;
+
+int main()
+{
+	LL n;
+	cin >> n;
+	LL temp,tot;
+	tot = 0;
+	for(int i = 0 ; i < n ; ++i)	cin >> temp , tot += temp;
+	if(tot = (n * (n + 1)) / 2)	puts("YES");
+	else	puts("NO");
+	return 0;
+}

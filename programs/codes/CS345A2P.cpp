@@ -1,0 +1,42 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+typedef long long LL;
+
+#define INF (LL)(1e18);
+
+LL t,n,k;
+
+LL dp[1005][2][2];
+
+LL P[1005];
+
+int main()
+{
+	LL ans;
+	cin >> t;
+	while(t--)
+	{	
+		P[0] = 0LL;
+		cin >> n ;
+		k = 1;
+		for(int i = 1 ; i <= n ; ++i)	cin >> P[i];
+		for(int i = 0 ; i <= n ; ++i)	for(int j = 0 ; j <= k ; ++j)	dp[i][j][1] = dp[i][j][0] = -1*INF;
+		for(int i = 0 ; i <= n ; ++i)	dp[i][0][1] = 0LL;
+		for(int i = 1 ; i <= n ; ++i)
+		{
+			for(int j = 1 ; j <= k ; ++j)
+			{
+				dp[i][j][1] = max(dp[i][j][1] , max(dp[i-1][j][1] , dp[i-1][j][0] + P[i]));
+				dp[i][j][0] = max(dp[i][j][0] , max(dp[i-1][j][0] , dp[i-1][j-1][1] - P[i]));
+			}
+		}
+		ans = 0LL;
+		for(int i = 0 ; i <= k ; ++i)	ans = max(ans,dp[n][i][1]);
+		cout << ans << endl;
+	}
+	return 0;
+}

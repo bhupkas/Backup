@@ -1,0 +1,8 @@
+Amazon@IITM
+20 MCQ, 2 Coding - 90 mins Platform - Hackerrank
+MCQs:
+Output of code snippet, OS,DBMS basics, Complexity estimation, basic discrete math. Gate type questions. (May be those were gate questions. I'm not sure.)
+Coding Q1:
+Phone Keypad=> Given pressed digits, print all possible strings that you can generate.
+Coding Q2:
+Evaluate Expression=>4 operators in order of precedence: (%,*,+,-); associativity is left to right. Ex: 2+43%4*3=11

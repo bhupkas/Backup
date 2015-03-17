@@ -1,0 +1,34 @@
+Browser Stack ...... TEST QUESTIONS IITB @ 27 OCT
+1.)
+Question: You join a company which uses a legacy command line program. This program when given an input like this: a b c d e f g h i
+Spits out an output like this: a b c f i h g d e
+Source code of this program is long lost and only the binary remains. You manager has asked you determine the logic and write this program, in a computer language that you prefer, so that source code of the program is in the control of the company.
+Sample Input (Plaintext Link)
+a b c
+d e f
+g 19 20
+Sample Output (Plaintext Link)
+a b c f 20 19 g d e
+==========================================================
+2.)
+Json parse plus series computation
+Max. Score 20
+Evaluate an expression given in an JSON format. Keys will be: Expr - contains the entire expression Elem - contains the digit, Sum, Prod - contains two or more keys whose evaluation needs to be summed or multiplied, respectively, Sub - will contain two keys or more, where the second key onwards will have to be subtracted from the first one, Div - will contain two keys in which the first key will need to be divided by the second
+Sample Input (Plaintext Link)
+{
+"expr": {
+"sum": {
+"elem": [
+"4",
+"6",
+"7",
+"3"
+]
+}
+}
+}
+Sample Output (Plaintext Link)
+20
+Explanation
+Input: Will be json file through standard input. expression will be given as value of expr key, as shown in example
+Output: You need to print the result of evaluated expression

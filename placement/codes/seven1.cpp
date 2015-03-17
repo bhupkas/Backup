@@ -1,0 +1,106 @@
+using namespace std;
+
+#include "bits/stdc++.h"
+
+vector < string > num;
+
+vector < string > inp;
+
+int n;
+
+void pre()
+{
+        num.push_back("1111110");
+        num.push_back("0110000");
+        num.push_back("1101101");
+        num.push_back("1111001");
+        num.push_back("0110011");
+        num.push_back("1011011");
+        num.push_back("1011111");
+        num.push_back("1110000");
+        num.push_back("1111111");
+        num.push_back("1111011");
+}
+
+int check(int x , int st)
+{
+        for(int i = 0 ; i < n ; ++i)
+        {
+                for(int j = 0 ; j < 7 ; ++j)
+                {       
+                        if(inp[i][j] == '1' && !((1<<j)&st))      return -1;
+                        if(inp[i][j] != num[x][j])
+                        {
+                                if(inp[i][j] == '1')    return -1;
+                                if(inp[i][j] == '0' && ((1<<j)&st))       return -1;
+                        }
+                }       
+                x = ((x - 1) % 10 + 10) % 10;
+        }
+        return x;
+}
+
+string banao(int re , int st)
+{
+        string ret;
+        for(int i = 0 ; i < 7 ; ++i)
+        {
+                if(!((1<<i)&st))      ret.push_back('0');
+                else    ret.push_back(num[re][i]);
+        } 
+        return ret;
+}
+
+int main()
+{
+        int t;
+        pre();
+        cin >> t;
+        string str;
+        for(int tc = 1 ; tc <= t ; tc++)
+        {
+                cin >> n;
+                inp.clear();
+                for(int i = 0 ; i < n ; ++i)
+                {
+                        cin >> str;
+                        inp.push_back(str);
+                }
+                printf("Case #%d: ",tc);
+                int st,re;
+                string answer;
+                int cnt = 0;
+                int aa;
+                string temp;
+                for(int i = 0 ; i < 10 ; ++i)
+                {
+                        for(int j = 0 ; j < 128 ; ++j)
+                        {
+                                aa = check(i,j);
+                                if(aa >= 0)
+                                {
+                                        temp = banao(aa,j);
+                                        if(answer.empty())
+                                        {
+                                                answer = temp;
+                                                cnt++;
+                                                continue;
+                                        }
+                                        if(answer != temp)
+                                        {
+                                                cnt = 2;
+                                                break;
+                                        }
+                                }
+                        }
+                }
+                if(cnt != 1)
+                        puts("ERROR!");
+                else
+                {
+                        cout << answer;
+                        cout << endl;
+                }
+        }
+        return 0;
+}

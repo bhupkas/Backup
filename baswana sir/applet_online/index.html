@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+	SEC
+</title>
+<style type="text/css">  
+      #inp
+      {
+         color: white;
+         width: 100%;
+         position: absolute;
+         top:0px;
+         background: black;
+         height: 100px;
+         left:0px;
+      }
+      #canvas_container 
+      {  
+       position:absolute;
+       top:100px;
+       left: 0px;
+       background-color: #989898 ; 
+       width: 100%;
+       height:700px;  
+      }
+      #right
+      {
+      	height:700px;
+      	width:200px;
+      	position: absolute;
+      	background: black;
+      	right:0px;
+      	top:0px;
+      	overflow:auto;
+      } 
+      #points
+      {
+      	list-style: none;
+      	background: black;
+         padding: 2px;
+      }
+      
+      #points li
+      {
+      	color:white;
+      	margin:3px;
+      }
+      .po
+      {
+        position: absolute;
+        width:70px;
+        height: 40px;
+        background: white;
+      }
+</style>
+<script type="text/javascript" src="js/raphael.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/script1.js"></script>
+</head>
+<body>
+   <form id="inp" onsubmit="" method="">
+        Number of points: <input type="text" id="uname">
+        <button id="fill" type="button" onclick="te()">Click Me!</button>
+        <button id="remove" type="button" onclick="re()">Reset</button>
+   </form>
+	 <div id="canvas_container">
+	 	<div id="right">
+	 		<ul id="points">
+	 		</ul>
+	 	</div>
+	 </div>  
+</body>
+</html>

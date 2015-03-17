@@ -1,0 +1,8 @@
+Similar to run length decoding
+- Sum of values in pascal triangle given range
+- Given a set of characters, an equation and length of password, find the password such that it satisfies the equation and the characters are from the given set.
+
+Given string: "jghklzxvbnmpw"
+Passwd length: 4 (passwd contains characters only from the string given above)
+Assuming passwd is a'b'c'd' it should satisfy the equation: a'^4-b'^3+c'^2-d'^1=0
+for the purpose of solving the equation a maps to 1, b maps to 2, c maps to 3 and so on..

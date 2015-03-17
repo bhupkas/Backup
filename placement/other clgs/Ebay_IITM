@@ -1,0 +1,11 @@
+Pen and paper coding question - attempt one out of 2, 30 minutes
+(1) Sort strings based on QWERTY (keyboard) ordering, i.e. the order is QWERTYUIOPASDFGHJKLZXCVBNM
+Input: Strings with only upper case letters, one on each line, the last line will contain a "."
+Output: The strings in qwerty-sorted order
+Example (I don't remember the exact example, so I'm creating my own test case :P)
+Input:
+APPLE
+TRACK
+CAT
+TRACTOR
+QUEEN

@@ -1,0 +1,33 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+int main()
+{
+	string str;
+	cin >> str;
+	int n = str.size();
+	int re = 0;
+	int i = 0 ;
+	char ch;
+	while(i < n)
+	{
+		ch = str[i];
+		int foo = 0;
+		while(str[i] == ch && i < n)
+		{
+			i++;
+			foo++;
+		}
+		if(!(foo&1))	re++;
+	}
+	cout << re << endl;
+	/*
+	cin >> n;
+	vector < int > v(n);
+	for(int i = 0 ; i < n ; i++)	cin >> v[i];
+	*/
+	return 0;
+}

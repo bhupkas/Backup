@@ -1,0 +1,9 @@
+Consider the 3 types of operations:
+(1) Take out two black balls. 
+The number of black balls will decrease by 2, and the number of white balls will increase by 1.
+(2) Take out two white balls.
+The number of white balls will decrease by 1.
+(3) Take out one black ball and one white ball.
+The number of white balls will decrease by 1.
+We can see that during the process, the parity of the number of black balls never changes. So if B is even, the last ball cannot be black. If B is odd, the last ball must be black.
+The time complexity is O(1). The space complexity is O(1).

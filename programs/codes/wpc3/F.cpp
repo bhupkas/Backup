@@ -1,0 +1,30 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+typedef long long LL;
+
+bool issahi(LL num)
+{
+	LL val = 0;
+	LL n1 = num;
+	while(n1)	val += n1 % 10 , n1 /= 10;
+	if(num % val == 0)	return true;
+	return false;
+}
+
+int main()
+{
+	int t;
+	cin >> t;
+	LL n;
+	while(t--)
+	{
+		cin >> n;
+		while(!issahi(n))	n++;
+		cout << n << endl;
+	}
+	return 0;
+}

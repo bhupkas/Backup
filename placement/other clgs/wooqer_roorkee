@@ -1,0 +1,14 @@
+Objectives 50 min
+
+Objective had probability, os, output questions, algo, graph , DBMS(1 question) 
+
+Coding round 2 ques 1 hr
+
+1) Given an array of strings.  It is given that the array contains word "fox".
+Given another word as input find the minimum distance of that word from "fox" , differences in indices
+many occurences of fox and word
+
+2) Given a binary tree and an integer , find the number of paths with that sum , not neccessarily from root and not necessaerily to leaf , but cant go across a node.
+If u are going down , den only go down , if up den only up.
+
+{May be recur(left,k) , recur(right,k) , recur(left,k-root) , recur(right,k-root)}

@@ -1,0 +1,4 @@
+Q1. 2d RxC matrix with 'Y' or 'N' written on each cell. Y means it has grass and N means it doesnt. If a cell has grass and adjacent cell has grass, then they both belong to the same field. consider all such fields. Now you have many sheeps and goats. Assign sheeps and goats to these fields such that on each field only one of them is there. Find the number of ways in which you can assign even number of sheeps to fields. Every field has either 1 sheep or 1 goat. Output the answer modulo 10^9+7
+1<=R,C<=5000
+
+Q2. You have a string.You can insert characters anywhere in the string. Find the least number of insertions so that it becomes a palindrome.

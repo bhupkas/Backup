@@ -1,0 +1,117 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+typedef long long LL;
+
+const int N = 200005;
+
+struct node 
+{
+	int a,b,idx;
+};
+
+typedef struct node Node;
+
+typedef long long LL;
+
+int n;
+
+int stp;
+
+Node T1[N],T2[N];
+
+Node L[N];
+
+int P[17][N];
+
+int C1[N],C2[N],T[N];
+
+void radix()
+{
+	for(int i = 0 ; i <= n ; ++i)	C1[i] = C2[i] = 0;
+	for(int i = 0 ; i < n ; ++i)	L[i].b++;
+	for(int i = 0 ; i < n ; ++i)	C1[L[i].b]++ , C2[L[i].a]++;
+	for(int i = 1 ; i <= n ; ++i)	C1[i] += C1[i-1] , C2[i] += C2[i-1];
+	for(int i = 0 ; i < n ; ++i)
+	{
+		T1[C1[L[i].b]-1].a = L[i].a;
+		T1[C1[L[i].b]-1].b = L[i].b;
+		T1[C1[L[i].b]-1].idx = L[i].idx;
+		C1[L[i].b]--;
+	}
+	for(int i = 0 ; i < n ; ++i)
+	{
+		T2[C2[T1[i].a]-1].a = T1[i].a;
+		T2[C2[T1[i].a]-1].b = T1[i].b;
+		T2[C2[T1[i].a]-1].idx = T1[i].idx;
+		C2[T1[i].a]--;
+	}
+	for(int i = 0 ; i < n ; ++i)	L[i] = T2[i];
+}
+
+map < int , int > mymap;
+
+int lcp(int x, int y)
+{
+	if(x == y)	return n - x;
+	int re = 0;
+	for(int i = stp - 1 ; i >= 0 && x < n && y < n; --i)
+	{
+		if(P[i][x] == P[i][y])
+		{
+			x += (1 << i);
+			y += (1 << i);
+			re += (1 << i);
+		}
+	}
+	return re;
+}
+
+LL disstr(string str)
+{
+	n = str.size();
+	for(int i = 0 ; i < n ; ++i)	T[i] = P[0][i] = (int)(str[i] - '0');
+	sort(T,T+n);
+	int co = 0; 
+	mymap[T[0]] = 0;
+	co++;
+	for(int i = 1 ; i < n ; ++i)	if(T[i] != T[i-1])	mymap[T[i]] = co , co++;
+	for(int i = 0 ; i < n ; ++i)	P[0][i] = mymap[P[0][i]];
+	bool foo = true;
+	int cnt;
+	for(stp = 1 , cnt = 1 ; ; stp++ , cnt <<= 1 , foo = true)
+	{
+		for(int i = 0 ; i < n ; ++i)	L[i].a = P[stp-1][i] , L[i].b = i + cnt < n ? P[stp-1][i+cnt] : -1 , L[i].idx = i;
+		radix();
+		P[stp][L[0].idx] = 0;
+		for(int i = 1 ; i < n ; ++i)
+		{
+			if(L[i].a == L[i-1].a && L[i].b == L[i-1].b)	P[stp][L[i].idx] = P[stp][L[i-1].idx] , foo = false;
+			else	P[stp][L[i].idx] = i;			
+		}
+		if(foo)
+		{
+			stp++;
+			break;
+		} 
+	}	
+	LL re = (LL)(n * (LL)(n + 1)) / 2;
+	for(int i = 1 ; i < n ; ++i)	re -= lcp(L[i].idx , L[i-1].idx);
+	return re;
+}
+
+int main()
+{
+	string str1,str2,str;
+	cin >> str1 >> str2;
+	LL re1 = disstr(str1);
+	LL re2 = disstr(str2);
+	str = str1 + "#" + str2;
+	LL re3 = disstr(str);
+	re3 -= (LL)(str1.size() + 1) * (LL)(str2.size() + 1);
+	cout << 2*re3 - re1 - re2 << endl;
+	return 0;
+}

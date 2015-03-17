@@ -1,0 +1,37 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+int A[100005];
+
+int B[100005];
+
+int main()
+{
+	int t;
+	cin >> t;
+	int n;
+	while(t--)
+	{
+		cin >> n;
+		for(int i = 0 ; i < n ; ++i)	cin >> A[i];
+		sort(A,A+n);
+		B[0] = A[0];
+		int n1 = n;
+		n1--;
+		int j = 1;
+		while(n1 > 1)
+		{
+			B[j] = A[j+1];
+			B[j+1] = A[j];
+			j += 2;
+			n1 -= 2;
+		}
+		if(n1)	B[n-1] = A[n-1];
+		for(int i = 0 ; i < n ; ++i)	cout << B[i] << " ";
+		cout << endl;
+	}
+	return 0;
+}

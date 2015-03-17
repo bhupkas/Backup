@@ -1,0 +1,26 @@
+#include "stdio.h"
+
+#define ifc(x) (flag[x>>6]&(1<<((x>>1)&31)))
+#define isc(x) (flag[x>>6]|=(1<<((x>>1)&31)))
+
+#define MAX 10000
+
+int flag[MAX>>6],primes[10000];
+
+void sieve()
+{
+	int i, j, k;
+	for(i=3; i<LMT; i+=2)
+		if(!ifc(i))
+			for(j=i*i,k=i<<1; j<MAX; j+=k)
+				isc(j);
+	for(i=3,j=0; i<MAX; i+=2)
+		if(!ifc(i))
+			{primes[j++] = i;	cout<<i<<endl;}
+}
+
+int main()
+	{
+		sieve();
+		return 0;
+	}

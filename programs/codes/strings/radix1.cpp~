@@ -1,0 +1,43 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+int A[11],B[11];
+
+int n;
+
+int C[11];
+
+struct node 
+{
+	int val1,val2,idx;
+};
+
+typedef struct node Node;
+
+Node N[11];
+
+int R[11],R1[11];
+
+void radix()
+{
+	int Co[11],Co1[11];
+	for(int i = 0 ; i < 10 ; ++i)	Co[i] = Co1[i] = 0;
+	for(int i = 0 ; i < n ; ++i)	Co[N[i].val2]++ , Co1[N[i].val1]++;
+	for(int i = 1 ; i < 10 ; ++i)	Co[i] += Co[i-1] , Co1[i] += Co1[i-1];
+	for(int i = n - 1 ; i >= 0 ; --i)	R[Co[N[i].val2]-1] = i , Co[N[i].val2]--;
+	for(int i = 0 ; i < n ; ++i)	cout << R[i] << endl;
+	for(int i = n - 1 ; i >= 0 ; --i)	R1[Co1[N[R[i]].val1]-1] = R[i] , Co1[N[R[i]].val1]--;
+	for(int i = 0 ; i < n ; ++i)	cout << R1[i] << endl;  
+}
+
+int main()
+{
+	cin >> n;
+	for(int i = 0 ; i < n ; ++i)	cin >> A[i] >> B[i];
+	for(int i = 0 ; i < n ; ++i)	N[i].val1 = A[i] , N[i].val2 = B[i] , N[i].idx = i;
+	radix();
+	return 0;
+}

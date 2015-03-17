@@ -1,0 +1,46 @@
+/* bhupkas */
+
+/* Left greater than right for all nodes */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+struct node
+{
+	int data;
+	struct node * left, * right;
+};
+
+typedef struct node Node;
+
+bool check(Node * root)
+{
+	if(root == NULL)	return true;
+	if(check(root -> left) && check(root->right))
+	{
+		if(root -> left != NULL && root -> right != NULL && root -> left -> data < root -> right -> data)	return false;
+		return true;
+	}
+	return false;
+}
+
+struct node* newNode(int data)
+{
+    struct node* node = (struct node *)malloc(sizeof(struct node));
+    node->data = data;
+    node->left = NULL;
+    node->right = NULL;
+    return(node);
+}
+
+int main()
+{
+	struct node *root = newNode(6);
+    root->left        = newNode(10);
+    root->right       = newNode(2);
+    root->left->right = newNode(1);
+	    root->right->left = newNode(12);
+	cout << check(root) << endl;
+	return 0;
+}

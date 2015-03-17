@@ -1,0 +1,52 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+typedef long long LL;
+#define MOD (LL)(10000000000000000)
+
+LL modpow (LL a, LL b, LL mod)
+{
+    LL res = 1;
+    while (b)
+    {
+        if (b & 1) res = (res * a) % mod;
+        a = (a * a) % mod;
+        b >>= 1;
+    }
+
+    return res;
+}
+
+int main()
+{
+	vector < LL > v;
+	int n;
+	cin >> n;
+	for(LL i = 1 ; i <= n ; i++)	v.push_back(modpow(i,i,250));
+	LL dp[255];
+	/*
+	for(int i = 0 ; i < n ; i++)	cout << v[i] << " ";
+	cout << endl;
+	*/
+	for(LL i = 0 ; i < 255 ; i++)	dp[i] = 0;
+	dp[0] = 1LL;
+	for(LL i = 0 ; i < n ; i++)
+	{
+		LL dp1[255];
+		for(int j = 0 ; j <= 249 ; j++)	dp1[j] = dp[j];
+		for(int j = 0 ; j <= 249 ; j++)
+		{
+			dp1[(j + v[i])%250] = (dp[(j + v[i])%250] + dp[j]) % MOD;
+		}
+		for(int j = 0 ; j <= 249 ; j++)	dp[j] = dp1[j];
+	}
+	cout << (dp[0] - 1 + MOD) % MOD << endl;
+	/*
+	for(int i = 0 ; i <= 249 ; i++)	cout << dp[i] << " ";
+	cout << endl;
+	*/
+	return 0;
+}

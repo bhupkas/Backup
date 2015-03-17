@@ -1,0 +1,3 @@
+1. Given two strings, find the common alphabets between them. Code & give Test Case
+2. given a string, reverse the string while prserving the words. i.e " this is an example" gets transformed to "example an is this" without using any extra memory space.
+3. Merge two sorted linked lists without using extra space/pointers etc.

@@ -1,0 +1,88 @@
+1 hr 50mcq
+
+1 hr 2 coding
+
+1) http://www.geeksforgeeks.org/find-number-of-islands/
+
+2) doosra to check if a given pair of strings are pseudo anagrams
+and how do they define pseudo anagrams ?
+
+rearrangement of alphabetic letters along with
+
+non alphabetic chars do not matter
+
+eg asd , dsa67
+
+are true
+
+not asdf , asde
+
+gives false
+basically anagrams , ignoring non alphabets
+right ?
+
+yup
+maintain the count ..
+will suffice .
+
+yup
+
+MCQ:
+
+No DBMS 
+Networks + OS + Apti + OOPs
+
+like which of the following is suitable for udp
+
+is type ka
+
+oops pe ek sawal tha
+
+dynamic polymorphism
+
+no wait...
+
+2 questions
+
+on dynamic polyorphism
+
+*polymorphism
+
+ek ka toh lamba sa code tha
+
+uska output batana tha
+
+basic funda tha ki kaun sa constructor invoke hoga
+
+phirr ek pointers pe tha
+
+exact yaad nai hai
+
+but virtual functions ke funde pe tha
+
+
+most of them on virual functions, dynamic polymorphism type ke
+
+os pe ek numerical tha
+
+paging ka
+
+networks general funde hi the
+
+ so basically OOPs in detail and rest basic .
+
+
+
+IIT KGP citrix written questions.
+(1 hour apti followed by another 1 hour coding(2 que))
+1.Dont remember the actual question but it was related to 8 connectedness, i.e given a matrix of 1's and 0's you need to find number of clusters of 1's. cluster -> for any cell in matrix every 8 adjacent cell for that cell will be in the same cluster.
+2. Given two strings check whether one is psuedo-anagram of other.
+conditions:-
+(i)only letters need to be considered.
+e.g. abcd and bc-"ad? are psuedo-anagrams.
+(ii)case-insensitive.
+e.g. abCd and BCaD are psuedo-anagrams.
+(iii)repetition of characters is allowed.
+e.g. abcd and bccaaad are psuedo-anagrams.
+aptitude:
+some c, c++ programs,os,quant apti, n/w.......not tough

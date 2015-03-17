@@ -1,0 +1,19 @@
+Section-A
+Pen & Paper Coding: any one out of two questions in 30 mins. 
+Level: Easy
+1. Printing a string in wave like pattern. If the current character is greater than(a-z order) that of previous character then print it above, if it is less than current then print below and if its equal then in same line.
+e.g.
+I/P: abcbd
+O/P: (these dashes indicates spaces)
+---c-d
+--b-b
+a
+2. Replace the given substring with some other substring in a string.
+I/P: SUNDAY, replace SU with MO
+MONDAY
+Section B
+Online aptitude, 20 questions, 30 mins. +1 for correct answer, -0.25 for wrong.
+DI- tedious calculations, time consuming
+Logical- Horrible! 
+Quant- Medium but time consuming.
+We didn't find many people doing more than 10-12 out of 20.

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1366927850 source:f:\programming\codes\check\main.cpp
+	<iostream>
+	"string"
+	"string.h"
+	"stdlib.h"
+	"stdio.h"
+

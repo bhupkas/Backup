@@ -1,0 +1,5 @@
+Microsoft at IITK 
+30 min technical:15 questions mainly C language, no negative marking , 1 hour coding
+Coding questions are :
+1. Determine if binary representation of a given non negative no. is palindrome, if yes then return no. of set bits in binary representation else return -1.
+2. Convert a binary tree to its mirror.

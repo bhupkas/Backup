@@ -1,0 +1,10 @@
+
+ Given a road network with n cities and m roads between those n cities (n <= 100000 && m <= 100000). You want to find out smallest connected network which should contain all 
+the vertices and cost of product of all the edges should be minimum.
+	input T: test cases (T <= 100)
+			n and m .
+			next m lines will have a , b , c. which denotes that a and b are connected with edge of cost c. (c >= 10 && c <= 1000000000000 && c will always be power of 2) (a >= 1 && a <= n) && (b >= 1 && b <= n)
+	output :
+			output log_2 of the cost of product of all the edges in the smallest network.
+			As value of product can be increased too much. So instead output log value.
+			

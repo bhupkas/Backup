@@ -1,0 +1,12 @@
+
+	given n sticks in a plane. You have to partition these into triangles such that sum of area of triangles is maximum. (Note that no two triangles can have common vertices)
+n <= 15. 
+	input: T : test cases (T <= 5)
+			every line contains .
+			then in every line length[i] denotes the length of ith stick. 
+	Ouput: for each test case find out the maximum possible area (error <= 1e-6 is accpeted)
+			
+	Definition: an triangle could be constructed if a , b, c has property that sum of any two sides should be greater than other one.
+	for finding area
+
+	0 <= length[i] <= 10^3

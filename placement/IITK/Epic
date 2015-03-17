@@ -1,0 +1,11 @@
+4 rounds
+
+1) 2 min 10 q
+2) New language 20 q
+3) Maths 14 q
+4) 2hr 4 coding(pseudo code allowed)
+
+1) Given a number , convert to string , generate all substrings , multiply all digits of a substring and calc the product , check if two substrings have same product
+2) Generate all well-rdered strings of a given length. well ordered means character coming late in string also come latter in the alphabet
+3) A person is contaminated , given many rounds od interaction , after all rounds of interactions , find the contaminated person
+4) Easy string implementation question

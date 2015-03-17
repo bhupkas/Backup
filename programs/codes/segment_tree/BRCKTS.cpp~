@@ -1,0 +1,180 @@
+/* Team name: Omega
+*  Problem name: BRCKTS
+*/
+#include <vector>
+#include <list>
+#include <map>
+#include <set>
+#include <queue>
+#include <deque>
+#include <stack>
+#include <bitset>
+#include <algorithm>
+#include <functional>
+#include <numeric>
+#include <utility>
+#include <sstream>
+#include <iostream>
+#include <iomanip>
+#include <cstdio>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include <cstring>
+ 
+using namespace std;
+ 
+typedef long long LL;
+typedef long double LD;
+typedef vector <int> VI;
+typedef vector <double> VD;
+typedef vector<string> VS;
+typedef vector <VI> VVI;
+typedef pair <int,int> PII;
+typedef pair <LL,LL> PLL;
+typedef vector <PII > VPII;
+typedef pair <double, double> PDD;
+typedef vector <PDD> VPDD;
+ 
+const double EPS = 1e-9;
+const int MOD = int(1e9) + 7;
+const double PI = acos(-1.0); //M_PI;
+ 
+#define SZ(a) int((a).size())
+#define PB push_back
+#define ALL(c) (c).begin(),(c).end()
+#define LLA(A) A.rbegin(), A.rend()
+#define CPY(A, B) memcpy(A, B, sizeof(A))
+#define BSC(A, x) (lower_bound(ALL(A), x) - A.begin())
+#define ERS(A, P) A.erase(A.begin() + P)
+#define PRESENT(c,x) ((c).find(x) != (c).end())
+#define NOT_PRESENT(c,x) (find(all(c),x) != (c).end())
+#define MP make_pair
+#define REP(i,n) for(int _n=n, i=0;i<_n;++i)
+#define FOR(i,a,b) for(int i=(a),_b=(b);i<_b;++i)
+#define FOREACH(it,c) for(typeof((c).begin()) it=(c).begin();it!=(c).end();++it)
+#define FI first
+#define SE second
+#define INPUT(a) freopen (a, "r", stdin)
+#define OUTPUT(a) freopen (a, "w", stdout)
+#define MAXN 100000
+#define DWN(i, b, a) for (int i=int(b-1);i>=int(a);--i)
+#define FILL(a, v) memset(a, v, sizeof(a));
+ 
+#define DEBUG(x) cout<<#x<<" :"<<x<<endl;
+ 
+ 
+template <class T>
+void  printV (vector<T> a) {
+        REP (i, SZ(a)) cout<<a[i]<<" ";
+        cout<<endl;
+}
+ 
+template <class T>
+void  printA (T a[],int n) {
+        REP (i, n) cout<<a[i]<<" ";
+        cout<<endl;
+}
+ 
+template <class T>
+void  printVV (vector<vector<T> > a) {
+        REP (i, SZ(a)) {
+                REP(j,SZ(a[0])) cout<<a[i][j]<<" ";
+                cout<<endl;
+        }
+}
+ 
+template <class T>
+void  printAA (T a[],int n) {
+        REP (i, n) {
+                REP (j,n) cout<<a[i]<<" ";
+                cout<<endl;
+        }
+}
+ 
+///////////////////////////////////////////////////////////////////////////////////
+
+struct node     {
+        int open;
+        int close;
+};
+
+typedef struct node Node;
+
+Node segtree[4*MAXN+5];
+
+char str[30005];
+int n;
+void build(int idx,int lo,int hi)	
+{
+		if(lo==hi)	
+		{
+			//cout<<idx<<endl;
+			if(str[lo-1]=='(')	segtree[idx].open=1,segtree[idx].close=0;
+			else			segtree[idx].open=0,segtree[idx].close=1;
+			return;
+		}
+		
+		int mid=(lo+hi)/2;
+		build(2*idx,lo,mid);
+		build(2*idx+1,mid+1,hi);
+		int mi=min(segtree[2*idx].open,segtree[2*idx+1].close);
+		if(mi==segtree[2*idx].open) 
+		{
+				segtree[idx].open=segtree[2*idx+1].open;
+				segtree[idx].close=segtree[2*idx+1].close+segtree[2*idx].close-segtree[2*idx].open;
+		}
+		else	
+		{
+				segtree[idx].close=segtree[2*idx].close;
+				segtree[idx].open=segtree[2*idx+1].open+segtree[2*idx].open-segtree[2*idx+1].close;
+		}
+	}
+
+void update(int idx,int lo,int hi,int qidx)	{
+		if(lo==hi && qidx==lo)	{swap(segtree[idx].open,segtree[idx].close);	return;}
+		if(qidx<lo || qidx>hi)	return;
+		else	{
+			int mid=(lo+hi)/2;
+			update(2*idx,lo,mid,qidx);
+			update(2*idx+1,mid+1,hi,qidx);
+			int mi=min(segtree[2*idx].open,segtree[2*idx+1].close);
+			if(mi==segtree[2*idx].open) 
+			{
+					segtree[idx].open=segtree[2*idx+1].open;
+					segtree[idx].close=segtree[2*idx+1].close+segtree[2*idx].close-segtree[2*idx].open;
+			}
+			else	
+			{
+					segtree[idx].close=segtree[2*idx].close;
+					segtree[idx].open=segtree[2*idx+1].open+segtree[2*idx].open-segtree[2*idx+1].close;
+			}
+		}
+	}
+
+int main() 
+{
+        //INPUT ("input.txt");
+        //OUTPUT ("output.txt");
+        int q,temp;
+        REP(i,2)	
+	{
+		printf("Test %d:\n",i+1);
+		scanf("%d",&n);
+		scanf("%s",str);
+		scanf("%d",&q);
+		build(1,1,n);
+		while(q--)      
+		{
+		        scanf("%d",&temp);
+		        if(temp)        update(1,1,n,temp);
+		        else            {
+		                if(segtree[1].open==segtree[1].close && segtree[1].open==0)   printf("YES\n");
+		                else                                    printf("NO\n");
+		        }
+        }    
+	}
+        
+ 
+        return 0;
+}

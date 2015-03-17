@@ -1,0 +1,16 @@
+http://www.hackerearth.com/problem/algorithm/magic-fractions/
+1. In a party n guests are there, some guests talk with only some other.
+Input given in form of matrix, where i,j denotes if i talks with j
+Guests will talk only in pairs
+Find the max number of pairs possible
+undirected graph hai
+2. 
+Rectangle-
+range is given of sides, like(l,k) which means the length of corresponding side will lie b/w l and k
+Input :
+Ranges of each side given:
+base b1, b2
+side 1 - s1,s2
+side 2 - s3,s4
+side1 and side 2  are the heights of quadrilateal formed using base as given
+Now we need to find the range of 4th side, which will form the quadrilateral

@@ -1,0 +1,10 @@
+Logical Reasoning, Aptitude: See career cup for questions.. same questions were repeated.
+4 coding questions (Questions for everyone was different)
+To subtract 2 numbers given in form of arrays. It should handle all the overflow conditions.
+Given a matrix, find the maximum length path. Given a index, you can move only right and bottom, and also the difference between the elements of the path should be +-1.
+Implement Bingo game.
+Tic Tac Toe question
+Search a given word in matrix.
+Given a number, you can multiply it with any digit 2-9, check if the generated number is the anagram of the given number.
+Given sequence of key strokes of a mobile, generate the message.
+

@@ -1,0 +1,30 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+const double PI = acos(-1.0);
+
+int main()
+{
+	int n;
+	cin >> n;
+	vector < int > v(n);
+	for(int i = 0 ; i < n ; i++)	cin >> v[i];
+	sort(v.begin(),v.end());
+	int rr = 0;
+	if(n&1)
+	{
+		rr += v[0] * v[0];
+		for(int i = n - 1 ; i >= 1 ; i-= 2)	rr += (v[i] * v[i] - v[i-1] * v[i-1]);
+	}
+	else
+	{
+		for(int i = n - 1 ; i >= 0 ; i-= 2)	rr += (v[i] * v[i] - v[i-1] * v[i-1]);
+	}
+	double ans = (double)(rr) * PI;
+	printf("%0.12lf\n",ans);
+	
+	return 0;
+}

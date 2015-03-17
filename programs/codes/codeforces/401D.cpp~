@@ -1,0 +1,15 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+typedef long long LL;
+
+LL n,m,mo;
+
+int main()
+{
+	cin >> n >> m;
+	return 0;
+}

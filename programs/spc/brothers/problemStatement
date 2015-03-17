@@ -1,0 +1,9 @@
+
+ Given n numbers. Any two number are called brothers if they have some digit common.
+		Find out no of pairs which are brothers.
+		Input : T : no of test cases 
+			n <=10^6
+			then next n line contains a[i] >= 1 && a[i] <= 10^18
+		Output: no of such pairs as mentioned in the problem statement.
+
+

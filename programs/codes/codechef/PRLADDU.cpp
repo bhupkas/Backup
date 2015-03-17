@@ -1,0 +1,66 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+int n,D[100005],t;
+
+int A[100005];
+int B[100005];
+int cnt1,cnt2;
+int idx1[100005];
+int idx2[100005];
+long long re;
+int main()
+{
+        cin >> t;
+        while(t--)
+        {
+                re = 0;
+                cnt1 = cnt2 = 0;
+                cin >> n;
+                for(int i = 0 ; i < n ; ++i)    
+                {
+                        cin >> D[i];
+                        if(D[i] == 0)   continue;
+                        else if(D[i] < 0)    
+                        {
+                                A[cnt1] = -1*D[i];
+                                idx1[cnt1] = i;
+                                cnt1++;
+                        }
+                        else if(D[i] > 0)
+                        {
+                                B[cnt2] = D[i];
+                                idx2[cnt2] = i;
+                                cnt2++;
+                        }
+                }
+                int i,j;
+                i = j = 0;
+                while(i < cnt1 && j < cnt2)
+                {
+                      if(A[i] == B[j])
+                      {
+                                re += B[j] * abs(idx1[i]-idx2[j]);
+                                i++;
+                                j++;
+                      }             
+                      else if(A[i] < B[j])
+                      {
+                               re += A[i] * abs(idx1[i]-idx2[j]);
+                               B[j] -= A[i];
+                               i++;         
+                      }            
+                      else
+                      {
+                                re += B[j] * abs(idx1[i]-idx2[j]);
+                                A[i] -= B[j];
+                                j++;
+                      }
+                }
+                cout << re << endl;
+        }
+        return 0;
+}

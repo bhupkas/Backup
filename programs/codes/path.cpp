@@ -1,0 +1,60 @@
+using namespace std;
+
+#include "bits/stdc++.h"
+
+struct node 
+{
+        int val;
+        struct node * left;
+        struct node * right;
+};
+
+typedef struct node Node;
+
+Node * newNode(int val)
+{
+        Node * re;
+        re = (Node*)malloc(sizeof(Node));
+        re -> val = val;
+        re -> left = re -> right =  NULL;
+        return re;
+}
+
+void print(Node * root , vector < bool > & v)
+{
+        if(!(root -> left) && !(root -> right))       
+        {       
+                for(int i = 0 ; i < v.size() ; ++i)
+                {
+                        if(!v[i])        cout << "left ";
+                        else            cout << "right ";
+                }
+                cout << endl;
+                return;
+        }
+        if(root -> left)
+        {
+                v.push_back(false);
+                print(root -> left , v);
+                v.pop_back();
+        }
+        if(root -> right)
+        {
+                v.push_back(true);
+                print(root -> right , v);
+                v.pop_back();       
+        } 
+}
+
+int main()
+{
+        vector< bool > v;
+        Node * root = newNode(1);
+        root -> left = newNode(2);
+        root -> right = newNode(3);
+        root -> left -> right = newNode(5);
+        root -> right -> left = newNode(6);
+        root -> right -> right = newNode(7);    
+        print(root , v);
+        return 0;
+}

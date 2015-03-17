@@ -1,0 +1,51 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+int main()
+{
+	int n,m;
+	cin >> n >> m;
+	vector < int > v(n),prep(m);
+	for(int i = 0 ; i < n ; i++)	cin >> v[i];
+	for(int i = 0 ; i < m ; i++)	cin >> prep[i];
+	sort(v.begin() , v.end());
+	sort(prep.begin(),prep.end());
+	vector < int > need,left;
+	bool B1[3005],B2[3005];
+	memset(B1,false,sizeof(B1));
+	memset(B2,false,sizeof(B2));
+	for(int i = 0 ; i < n ; i++)
+	{
+		for(int j = 0 ; j < m ; j++)
+		{
+			if(v[i] == prep[j] && !B1[i] && !B2[j])
+			{
+				B1[i] = B2[j] = true;
+			}
+		}
+	}
+	for(int i = 0 ; i < n ; i++)	if(!B1[i])	need.push_back(v[i]);
+	for(int i = 0 ; i < m ; i++)	if(!B2[i])	left.push_back(prep[i]);
+	sort(need.begin(),need.end());
+	sort(left.begin(),left.end());
+	memset(B1,false,sizeof(B1));
+	memset(B2,false,sizeof(B2));
+	for(int i = 0 ; i < (int)need.size() ; i++)
+	{
+		for(int j = 0 ; j < (int)left.size() ; j++)
+		{
+			if(left[j] >= need[i] && !B1[i] && !B2[j])
+			{
+				B1[i] = B2[j] = true;
+				break;
+			}
+		}
+	}
+	int re = 0;
+	for(int i = 0 ; i < (int)need.size() ; i++)	if(!B1[i])	re++;
+	cout << re << endl;
+	return 0;
+}

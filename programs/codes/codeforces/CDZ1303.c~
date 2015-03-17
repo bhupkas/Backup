@@ -1,0 +1,131 @@
+/* bhupkas */
+
+#include "stdio.h"
+#include "math.h"
+
+#define NMAX 40005
+
+#define EPS 1e-9
+
+typedef long long LL;
+
+int N;
+int n;
+
+#define PI acos(-1.0)
+
+struct node
+{
+	double real,complex;
+};
+typedef struct node Node;
+
+Node addition(Node a, Node b)
+{
+	Node re;
+	re.real = a.real + b.real;
+	re.complex = a.complex + b.complex;
+	return re;
+}
+
+Node multiplication(Node a, Node b)
+{
+	Node re;
+	re.real = a.real * b.real - a.complex * b.complex;
+	re.complex = a.real * b.complex + a.complex * b.real;
+	return re; 	
+}
+
+Node A[NMAX + 5] , B[NMAX + 5] ;
+LL R[NMAX + 5];
+
+Node roots[NMAX + 5];
+
+Node pointvalueA[NMAX + 5] , pointvalueB[NMAX + 5] , pointvalueC[NMAX + 5],  D[NMAX + 5];
+
+void init()
+{
+	int i = 0 ;
+	for(i = 0 ; i < N ; i++)
+	{
+		roots[i].real = cos((2.0*i*PI)/(1.0*N));
+		roots[i].complex = sin((2.0*i*PI)/(1.0*N));
+	}
+}
+
+int foo;
+
+void fun(Node from[] , Node to[] , int sz)
+{
+	int i = 0 ;
+	if(sz == 1)	
+	{
+		to[0].real = from[0].real;
+		to[0].complex = from[0].complex;
+		return;
+	}	
+	int si = sz >> 1;
+	Node even[si],odd[si];
+	int j;
+	for(i = 0 , j = 0 ; i < sz ; i += 2 , j++)
+	{
+		even[j].real = from[i].real;
+		even[j].complex = from[i].complex;
+		odd[j].real = from[i + 1].real;
+		odd[j].complex = from[i + 1].complex;
+	}
+	Node evenp[si],oddp[si];
+	fun(even,evenp,si);
+	fun(odd,oddp,si);
+	for(j = 0 ,i = 0 ; i < N ; i += N/sz , j++)
+	{
+		if(j >= si)	to[j] = addition(evenp[((2 * j) % sz)/2],multiplication(roots[i],oddp[((2 * j) % sz) / 2]));		
+		else		to[j] = addition(evenp[j],multiplication(roots[i],oddp[j]));
+	}	
+}	
+
+void polymult()
+{
+	int i = 0;
+	fun(A,pointvalueA,N);
+	fun(B,pointvalueB,N);
+	for(i = 0 ; i < N ; i++)	pointvalueC[i] = multiplication(pointvalueA[i],pointvalueB[i]);
+	fun(pointvalueC,D,N);
+	R[0] = (int)(((D[0].real + EPS)/(double)N) + EPS);
+	for(i = 1 ; i < N ; i++)	R[i] = (LL)((D[N - i].real / (double) N) + EPS);
+}
+
+int main()
+{
+	int t;
+	int m;
+	scanf("%d",&t);
+	int temp;
+	while(t--)
+	{
+		scanf("%d %d",&n,&m);
+		int i;
+		for(i = 0 ; i <= n ; i++)
+		{
+			scanf("%d",&temp);
+			A[i].real = (double)temp;
+			A[i].complex = 0.0;
+		}
+		for(i = 0 ; i <= m ; i++)
+		{
+			scanf("%d",&temp);
+			B[i].real = (double)temp;
+			B[i].complex = 0.0;
+		}
+		N = 1;
+		while(N <= n + m + 2)	N <<= 1;
+		init();
+		polymult();
+		for(i = N - 1 ; i >= 0 ; i--)	if(R[i] != 0)	break;
+		int j;
+		printf("%d\n",i);
+		for(j = 0 ; j <= i ; j++)	printf("%lld ",R[i]);
+		printf("\n");
+	} 
+	return 0;
+}

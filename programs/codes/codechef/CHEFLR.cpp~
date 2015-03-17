@@ -1,0 +1,36 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+typedef long long LL;
+
+#define MOD (LL)(1e9 + 7)
+
+LL off,odd,even,num;
+
+int main()
+{
+        int t;
+        string str;
+        cin >> t;
+        while(t--)
+        {
+                cin >> str;               
+                num = 1LL;
+                odd = even = 0LL;
+                off = 0LL;
+                for(int i = 0 ; i < str.size() ; ++i)
+                {
+                        if(i&1) even = (even + num) % MOD;
+                        else    odd = (odd + num) % MOD;
+                        num = (num * 2) % MOD;
+                        off = (2 * off) % MOD;
+                        if(str[i] == 'r')      off = (1 + off) % MOD; 
+                }
+                if(str.size() & 1)        cout << ( 2 * (even + off) + 2) % MOD << endl;
+                else    cout << (odd + off) % MOD << endl; 
+        }
+        return 0;
+}

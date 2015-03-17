@@ -1,0 +1,19 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+int cnmin(string str)
+{
+	int re = 0;
+	re = (str[0] -'0')*10 + str[1] - '1'
+}
+
+int main()
+{
+	string str;
+	cin >> str;
+	int inmin = 0;
+	return 0;
+}

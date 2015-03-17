@@ -1,0 +1,96 @@
+#include <vector>
+#include <list>
+#include <queue>
+#include <map>
+#include <set>
+#include <stack>
+#include <bitset>
+#include <algorithm>
+#include <sstream>
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+#define REP(i,n) for(int _n=n, i=0;i<_n;++i)
+
+void pre()
+{
+
+}
+int S[105],E[105],die[105];
+int next[105];
+
+int curr1,curr2;
+
+int main()
+{
+    pre();
+    int t;
+    cin >> t;
+    while(t--)
+    {
+    	int n,m,r;
+    	cin >> n >> m >>r;
+    	REP(i,m)	cin >> S[i] >> E[i];
+    	REP(i,r)	cin >> die[i];
+    	REP(i,n+1)	next[i] = i;
+    	REP(i,m)	next[S[i]] = E[i];
+    	curr1 = 1;
+    	curr2 = 1;
+    	bool move = true;
+    	int winner ;
+    	bool ok = false;
+    	REP(i,r)
+    	{
+    		//cout << move << " " << curr1 << " " << curr2 << endl;
+    		if(move)
+    		{
+    			bool temp = false;
+    			if(curr1 + die[i] < n)	
+    			{
+    				curr1 += die[i];
+    				if(next[curr1] != curr1)
+    				{
+    					temp = true;
+    					while(next[curr1] != curr1)	curr1 = next[curr1];
+    				}	
+    			}
+    			else if(curr1 + die[i] == n)	
+    			{
+    				curr1 = n;
+    				ok = true;
+    				winner = 1;
+    				break;
+    			}
+    			if(!temp && die[i] != 6 && (curr1 != curr2))	move = !move;	
+    		}
+    		else
+    		{
+    			bool temp = false;
+    			if(curr2 + die[i] < n)	
+    			{
+    				curr2 += die[i];
+    				if(next[curr2] != curr2)
+    				{
+    					temp = true;
+    					while(next[curr2] != curr2)	curr2 = next[curr2];
+    				}	
+    			}
+				else if(curr2 + die[i] == n)	
+    			{
+    				curr2 = n;
+    				ok = true;
+    				winner = 2;
+    				break;
+    			}
+    			if(!temp && die[i] != 6 && (curr1 != curr2))	move = !move;	
+    		}
+    	}
+    	if(ok == false)	winner = 0;
+    	cout << winner << " " << curr1 << " " << curr2 << endl;
+    }
+    return 0;
+}

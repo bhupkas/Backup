@@ -1,0 +1,17 @@
+2 coding questions 1 hr
+25 min 25 MCQ
+
+MCQ -> Networks , OS , Algo 
+No dbms
+
+1)SuperKnight : given a starting and final position of superknight , superknight can move like a knight and king , ie 1 step , U , D , E , W , diagonally 
+and L shaped moves like knight. Given the number of moves to be used , find the number of ways knight can go to final position using exactly those number of moves
+
+2) Switch array : given two sorted arrays , we can start from any array and end at any array , also we can switch from one array to another at at same valued 
+elements, find the maximum sum.
+
+1 7 4 5 6
+3 4 8 9
+
+start at 1 , den 7 , switch at 4 , den 8 , den 9
+sum = 1 + 7 + 4 + 8 + 9

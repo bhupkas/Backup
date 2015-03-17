@@ -1,0 +1,14 @@
+IITBHU citrix coding questions:
+There were 2 questions to be done in 1 hour.
+1. The question was to tell the separated components(which have 1 value) in a given matrix.
+http://www.geeksforgeeks.org/find-number-of-islands/
+e.g.,
+100000
+011000
+000000
+011100
+000001
+111010
+The answer for above test case would be 4.
+2. Tell the indian expansion for a given number.
+e.g., if the number is 99999999 then answer will be ninety nine crores ninety nine lakhs ninety nine thousand nine hundred and ninety nine only.

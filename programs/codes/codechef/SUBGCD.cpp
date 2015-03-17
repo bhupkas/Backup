@@ -1,0 +1,25 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+int A[100005];
+
+int main()
+{
+        int t;
+        int n;
+        cin >> t;
+        while(t--)
+        {
+                cin >> n;
+                for(int i = 0 ; i < n ; ++i)    cin >> A[i];
+                bool foo = false;
+                int gc = A[0];
+                for(int i = 1 ; i < n ; ++i)    gc = __gcd(gc , A[i]);
+                if(gc == 1) cout << n << endl;
+                else    cout << -1 << endl;
+        }
+        return 0;
+}

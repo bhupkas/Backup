@@ -1,0 +1,43 @@
+/* bhupkas */
+
+#include <map>
+#include <iostream>
+
+using namespace std;
+
+typedef long long LL;
+
+map < pair < LL , LL > , LL > mymap;
+map < pair < LL , LL > , LL > :: iterator it;
+
+LL fun(LL x , LL y)
+{
+	cout << x << " " << y << endl;
+	if(x == 0LL && y == 0LL)	return 0LL;
+	it = mymap.find(make_pair(x,y));
+	if(it != mymap.end())	return mymap[make_pair(x,y)];
+	LL xk,yk,remx,remy;
+	remx = x%3;
+	remy = y%2;
+	xk = x/3;
+	yk = y/2;
+	if(remx == 0 && remy == 0)	return fun(xk,yk);
+	if(remx == 1 && remy == 0)	return fun(xk,yk) + 1LL;
+	if(remx == 2 && remy == 0)	return fun(xk,yk);
+	if(remx == 0 && remy == 1)	return fun(xk,yk) + 1LL;
+	if(remx == 1 && remy == 1)	return fun(xk,yk) + 2LL;
+	if(remx == 2 && remy == 1)	return fun(xk,yk) + 1LL;
+}
+
+int main()
+{
+	int t;
+	cin >> t;
+	LL x,y;
+	while(t--)
+	{
+		cin >> x >> y;
+		cout << fun(x,y) << endl;
+	}
+	return 0;
+}

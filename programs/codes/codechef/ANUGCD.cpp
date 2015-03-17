@@ -1,0 +1,225 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+const int N = 200005;
+
+int A[N];
+
+void pre()
+{
+	for(int i = 0 ; i < N ; ++i)	A[i] = i;
+	for(int i = 2 ; i * i < N ; ++i)
+		if(A[i] == i)
+			for(int j = i ; j <= N/i ; ++j)
+				A[i*j] = min(A[i*j],i);
+}
+
+map < int , pair < int , int > > mymap[2*N];
+map < int , pair < int , int > > :: iterator it1,it2;
+
+#include <cstdio>
+#include <iostream>
+using std::string;
+
+static struct IO {
+	char tmp[1 << 10];
+
+	// fast input routines
+	char cur;
+
+//#define nextChar() (cur = getc_unlocked(stdin))
+//#define peekChar() (cur)
+	inline char nextChar() { return cur = getc_unlocked(stdin); }
+	inline char peekChar() { return cur; }
+
+	inline operator bool() { return peekChar(); }
+	inline static bool isBlank(char c) { return (c < '-' && c); }
+	inline bool skipBlanks() { while (isBlank(nextChar())); return peekChar() != 0; }
+
+	inline IO& operator >> (char & c) { c = nextChar(); return *this; }
+
+	inline IO& operator >> (char * buf) {
+		if (skipBlanks()) {
+			if (peekChar()) {
+				*(buf++) = peekChar();
+				while (!isBlank(nextChar())) *(buf++) = peekChar();
+			} *(buf++) = 0; } return *this; }
+
+	inline IO& operator >> (string & s) {
+		if (skipBlanks()) {	s.clear(); s += peekChar();
+			while (!isBlank(nextChar())) s += peekChar(); }
+		return *this; }
+
+	inline IO& operator >> (double & d) { if ((*this) >> tmp) sscanf(tmp, "%lf", &d); return *this;	}
+
+#define defineInFor(intType) \
+	inline IO& operator >>(intType & n) { \
+		if (skipBlanks()) { \
+			int sign = +1; \
+			if (peekChar() == '-') { \
+				sign = -1; \
+				n = nextChar() - '0'; \
+			} else \
+				n = peekChar() - '0'; \
+			while (!isBlank(nextChar())) { \
+				n += n + (n << 3) + peekChar() - 48; \
+			} \
+			n *= sign; \
+		} \
+		return *this; \
+	}
+
+defineInFor(int)
+defineInFor(unsigned int)
+defineInFor(long long)
+
+	// fast output routines
+
+//#define putChar(c) putc_unlocked((c), stdout)
+	inline void putChar(char c) { putc_unlocked(c, stdout); }
+	inline IO& operator << (char c) { putChar(c); return *this; }
+	inline IO& operator << (const char * s) { while (*s) putChar(*s++); return *this; }
+
+	inline IO& operator << (const string & s) { for (int i = 0; i < (int)s.size(); ++i) putChar(s[i]); return *this; }
+
+	char * toString(double d) { sprintf(tmp, "%lf%c", d, '\0'); return tmp; }
+	inline IO& operator << (double d) { return (*this) << toString(d); }
+
+
+#define defineOutFor(intType) \
+	inline char * toString(intType n) { \
+		char * p = (tmp + 30); \
+		if (n) { \
+			bool isNeg = 0; \
+			if (n < 0) isNeg = 1, n = -n; \
+			while (n) \
+				*--p = (n % 10) + '0', n /= 10; \
+			if (isNeg) *--p = '-'; \
+		} else *--p = '0'; \
+		return p; \
+	} \
+	inline IO& operator << (intType n) { return (*this) << toString(n); }
+
+defineOutFor(int)
+defineOutFor(long long)
+
+#define endl ('\n')
+#define cout __io__
+#define cin __io__
+} __io__;
+
+
+
+int n,m;
+int V[N];
+int G[N],a[N],b[N];
+
+bool B[N];
+
+int rmax;
+
+void build(int idx, int l , int r)
+{
+	if(l == r)
+	{
+		int temp = V[l];
+		while(temp != 1)
+		{
+			if(B[A[temp]])	mymap[idx][A[temp]] = make_pair(V[l],1);
+			temp /= A[temp];
+		}	
+		return;
+	}
+	int mid = (l + r) >> 1;
+	build(2*idx + 1 , l , mid);
+	build(2*idx + 2 , mid + 1 , r);
+	for(it1 = mymap[2*idx+1].begin() ; it1 != mymap[2*idx+1].end() ; it1++)
+	{
+		it2 = mymap[2*idx+2].find((*it1).first);
+		if(it2 != mymap[2*idx+2].end())
+		{
+			if(mymap[2*idx+1][(*it1).first].first == mymap[2*idx+2][(*it1).first].first)
+mymap[idx][(*it1).first] = make_pair(mymap[2*idx+1][(*it1).first].first,mymap[2*idx+1][(*it1).first].second + mymap[2*idx+2][(*it1).first].second);
+			else if(mymap[2*idx+1][(*it1).first].first > mymap[2*idx+2][(*it1).first].first)
+				mymap[idx][(*it1).first] = mymap[2*idx+1][(*it1).first];
+			else	mymap[idx][(*it1).first] = mymap[2*idx+2][(*it1).first];	
+		}
+		else
+			mymap[idx][(*it1).first] = mymap[2*idx+1][(*it1).first];
+	}
+	for(it1 = mymap[2*idx+2].begin() ; it1 != mymap[2*idx+2].end() ; it1++)
+	{
+		it2 = mymap[2*idx+1].find((*it1).first);
+		if(it2 != mymap[2*idx+2].end())
+		{
+			if(mymap[2*idx+1][(*it1).first].first == mymap[2*idx+2][(*it1).first].first)
+mymap[idx][(*it1).first] = make_pair(mymap[2*idx+1][(*it1).first].first,mymap[2*idx+1][(*it1).first].second + mymap[2*idx+2][(*it1).first].second);
+			else if(mymap[2*idx+1][(*it1).first].first > mymap[2*idx+2][(*it1).first].first)
+				mymap[idx][(*it1).first] = mymap[2*idx+1][(*it1).first];
+			else	mymap[idx][(*it1).first] = mymap[2*idx+2][(*it1).first];	
+		}
+		else
+			mymap[idx][(*it1).first] = mymap[2*idx+2][(*it1).first];
+	}
+}
+
+pair < int , int > query(int idx, int l, int r, int ql, int qr, int num)
+{
+	if(l > qr || r < ql)	return make_pair(-1,-1);
+	pair < int , int > re = make_pair(-1,-1);
+	if(l >= ql && r <= qr)	
+	{
+		while(num != 1)
+		{
+			it1 = mymap[idx].find(A[num]);
+			if(it1 != mymap[idx].end() && mymap[idx][A[num]].first != 0 && mymap[idx][A[num]].second != 0)
+				if(mymap[idx][A[num]].first > re.first)	re = mymap[idx][A[num]];
+			num /= A[num];
+		}
+		return re;
+	}
+	int mid = (l + r) >> 1;
+	pair <int,int> p1 = query(2*idx+1,l,mid,ql,qr,num);
+	pair <int,int> p2 = query(2*idx+2,mid+1,r,ql,qr,num);
+	if(p1.first == p2.first)	return make_pair(p1.first,p1.second+p2.second);
+	else if(p1.first > p2.first)	return p1;
+	else	return p2;
+}
+
+int main()
+{
+	pre();
+	rmax = -1;
+	//scanf("%d %d",&n,&m);
+	cin >> n >> m;
+	for(int i = 0 ; i < n ; ++i)	cin >> V[i];//scanf("%d",&V[i]);
+	for(int i = 0 ; i < m ; ++i)
+	{
+		//scanf("%d %d %d",&G[i],&a[i],&b[i]);
+		cin >> G[i] >> a[i] >> b[i];
+		a[i]--;
+		b[i]--;
+	}
+	for(int i = 0 ; i < N/2 ; ++i)	B[i] = false;
+	for(int i = 0 ; i < m ; ++i)
+	{
+		int temp = G[i];
+		while(temp != 1)	
+		{
+			B[A[temp]] = true ;
+			temp /= A[temp];
+		}
+	}
+	build(0,0,n-1);
+	for(int i = 0 ; i < m ; ++i)
+	{
+		pair < int , int > re = query(0,0,n-1,a[i],b[i],G[i]);
+		if(re.first == -1)	re.second = -1;
+		//printf("%d %d\n",re.first,re.second);
+		cout << re.first << " " << re.second << endl;
+	}
+	return 0;
+}

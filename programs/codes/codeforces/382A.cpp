@@ -1,0 +1,67 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+int main()
+{
+	int n;
+	int num;
+	string str1,str2;
+	cin >> str1 >> str2;
+	int cnt1 , cnt2;
+	cnt1 = cnt2 = 0;
+	int i = 0 ;
+	while(str1[i] != '|')	i++ , cnt1++;
+	cnt2 = str1.size() - cnt1 - 1;
+	string re;
+	if(cnt1 < cnt2)
+	{
+		int tot = cnt1 + cnt2 + str2.size();
+		
+		if(str2.size() >= cnt2 - cnt1 && tot%2 == 0)
+		{
+			tot = (str2.size() - cnt2 + cnt1);	
+			int i = 0;
+			int j = 0;
+			while(str1[i] != '|')	re.push_back(str1[i]) , i++;
+			i++;
+			for(j = 0 ; j < cnt2 - cnt1 + tot/2 ; j++)	re.push_back(str2[j]);
+			re.push_back('|');
+			while(i < str1.size())	re.push_back(str1[i])	,	i++;
+			while(j < str2.size())	re.push_back(str2[j])	,	j++;
+			cout << re << endl;
+			return 0;
+		}		
+	}
+	else
+	{
+		int tot = cnt1 + cnt2 + str2.size();
+		if(str2.size() >= cnt1 - cnt2 && tot%2 == 0)
+		{
+			tot = (str2.size() - cnt1 + cnt2);	
+			int i = 0;
+			while(str1[i] != '|')	re.push_back(str1[i]) , i++;
+			i++;
+			int j;
+			for(j = 0 ; j < tot/2 ; j++)	re.push_back(str2[j]);
+			re.push_back('|');
+			while(i < str1.size())	re.push_back(str1[i])	,	i++;
+			while(j < str2.size())	re.push_back(str2[j])	,	j++;
+			cout << re << endl;
+			return 0;
+		}		
+	}
+	cout << "Impossible" << endl;
+	/*
+	cin >> n;
+	vector < int > v(n);
+	for(int i = 0 ; i < n ; i++)
+	{
+		cin >> v[i];
+	}
+	sort(v.begin(),v.end());
+	*/
+	return 0;
+}

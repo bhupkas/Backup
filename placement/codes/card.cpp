@@ -1,0 +1,37 @@
+using namespace std;
+
+#include "bits/stdc++.h"
+
+int A[104];
+
+int main()
+{
+        int t;
+        cin >> t;
+        int n;
+        int k;
+        for(int tc = 1 ; tc <= t ; ++tc)
+        {
+                cin >> n;
+                cin >> k;
+                for(int i = 0 ; i < n ; ++i)
+                        cin >> A[i];
+                int cnt= 0;
+                while(1)
+                {
+                        bool foo = false;
+                        cnt = 0;
+                        for(int i = 0 ; i < n ;)
+                        {
+                                if(i < n - 2 && A[i] == A[i+1] && A[i] == A[i+2])
+                                        i += 3 , foo = true;
+                                else    A[cnt++] = A[i++];
+                        }
+                        n = cnt;
+                        if(!foo)        break;
+                }
+                printf("Case #%d: ",tc);
+                cout << n << endl;
+        }
+        return 0;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+	SEC
+</title>
+<script type="text/javascript" src="js/paper.js"></script>
+<script type="text/paperscript" canvas="myCanvas">
+
+	function isOutside(cx,cy,r,x1,y1)
+		{
+			P1=new Point(cx,cy);
+			P2=new Point(x1,y1);
+			if(P1.getDistance(P2)>r)	return true;
+			else						return false;
+		}
+
+	//function(p1,p2)
+
+	var n=10;
+	var P=new Array(); 
+	for (var i=0;i<n;i++)
+		{
+			var x=Math.floor((Math.random()*1000)+1);
+			var y=Math.floor((Math.random()*600)+1);
+			P[i]=new Point(x,y);	
+		}
+	
+	for (var i=0;i<n;i++)
+		{
+			var myCircle = new Path.Circle(P[i], 2);
+			myCircle.fillColor = 'black';
+		}
+	var centerx=(P[0].x+P[1].x)/2;
+	var centery=(P[0].y+P[1].y)/2;
+	var radius=P[0].getDistance(P[1])/2;
+	var loopi=new Path();
+	var loopj=new Path();
+	var loopk=new Path();
+	loopi.strokeColor='black';
+	loopj.strokeColor='red';
+	loopk.strokeColor='red';
+
+	var te1=Math.floor(centerx);
+	var te2=Math.floor(centery);
+	var te=new Point(te1,te2);
+	var o1=new Path.Circle(te,Math.floor(radius));
+	loopi=o1;
+	loopj=o1;
+	loop
+	loopi.strokeColor='black';
+	for(var i=2;i<n;i++) 
+				{
+					if(isOutside(centerx,centery,radius,P[i].x,P[i].y)==true) 
+						{
+							console.log(centerx);
+							console.log(centery);
+							console.log(radius);
+							var centerx1=(P[0].x+P[i].x)/2;
+							var centery1=(P[0].y+P[i].y)/2;
+							var radius1=(P[0].getDistance(P[i]))/2;
+							te1=Math.floor(centerx1);
+							te2=Math.floor(centery1);
+							te=new Point(te1,te2);
+							var temp_path=new Path.Circle(te,Math.floor(radius1));
+							loopj.position=temp_path.position;
+							for(var j=1;j<i;j++)
+								{
+									if(isOutside(centerx1,centery1,radius1,P[j].x,P[j].y)==true)
+										{
+											console.log(centerx1);
+											console.log(centery1);
+											console.log(radius1);
+											var centerx2=(P[i].x+P[j].x)/2;
+											var centery2=(P[i].y+P[j].y)/2;
+											var radius2=(P[i].getDistance(P[j]))/2;
+											te1=Math.floor(centerx2);
+											te2=Math.floor(centery2);
+											te=new Point(te1,te2);
+											var o2=new Path.Circle(te,Math.floor(radius2));
+											loopk.position=o2.position;
+											for(var k=0;k<j;k++)
+												{
+													if(isOutside(centerx2,centery2,radius2,P[k].x,P[k].y)==true)
+														{
+															console.log(centerx2);
+															console.log(centery2);
+															console.log(radius2);
+															var path=new Path.Arc(P[k],P[j],P[i]);
+															var path1=new Path.Arc(P[j],P[i],P[k]);
+															path.join(path1);
+															centerx3=path.position.x;
+															centery3=path.position.y;
+															var oo=new Point(centerx3,centery3);
+															radius3=oo.getDistance(P[k]);
+															setInterval(function(){loopk.position=path.position;},500);
+															centerx2=centerx3;
+															centery2=centery3;
+															radius2=radius3;
+														}
+												}
+											setInterval(function(){loopj.position=loopk.position;},500);
+											centerx1=centerx2;
+											centery1=centery2;
+											radius1=radius2;
+										}
+								}
+							setInterval(function(){loopi.position=loopj.position;},500);
+							centerx=centerx1;
+							centery=centery1;
+							radius=radius1;				
+						}
+				}
+	
+	/*
+	centerx=(P[4].x+P[5].x)/2;
+	centery=(P[4].y+P[5].y)/2;
+	radius=P[4].getDistance(P[5])/2;
+	te1=Math.floor(centerx);
+	te2=Math.floor(centery);
+	te=new Point(te1,te2);
+	myCirclei = new Path.Circle(te,Math.floor(radius));
+	setInterval(function(){loopi.position=myCirclei.position;	loopi.strokeColor='black';},100);*/
+	/*te1=Math.floor(centerx);
+	te2=Math.floor(centery);
+	te=new Point(te1,te2);
+	myCirclei = new Path.Circle(te,Math.floor(radius));
+	myCirclei.strokeColor = 'black';*/
+</script>
+</head>
+<body>
+    <canvas id="myCanvas" resize></canvas>
+</body>
+</html>

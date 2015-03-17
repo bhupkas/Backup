@@ -1,0 +1,9 @@
+Euler tour: Exists only when every vertex has even degree
+
+Writing Euler tour: part 9 np completeness	slide 9
+Euler path --> Starting and ending point may not be the same 
+
+In an Euler-Tour tree, we store the Euler tour of a represented tree in a balanced binary search
+tree (BST). For some represented tree, each visit to a node in that tree’s Euler tour corresponds
+
+http://www.academia.edu/1975585/Comparative_Analysis_of_Dynamic_Graph_Techniques_and_Data_Strucutre

@@ -1,0 +1,30 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+int A[500005];
+
+int main()
+{
+	int n;	
+	cin >> n;
+	for(int i = 0 ; i < n ; i++)	cin >> A[i];
+	int q;
+	cin >> q;
+	while(q--)
+	{
+		int type,a,b;
+		cin >> type >> a >> b;
+		if(type)
+		{
+			a--;
+		}
+		else
+		{
+			a--;b--;
+		}
+	}
+	return 0;
+}

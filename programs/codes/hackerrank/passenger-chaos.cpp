@@ -1,0 +1,42 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+int main()
+{
+	int t;
+	cin >> t;
+	deque < int > q;
+	while(t--)
+	{
+		int n;
+		cin >> n;
+		vector < int > v(n);
+		for(int i = 0 ; i < n ; i++)	cin >> v[i] , v[i]--;
+		q.clear();
+		int i = 0;
+		int cnt = 0;//cnt is the id of the person
+		bool foo = true;
+		while(i < n)
+		{
+			while(cnt <= v[i])	
+			{	
+				q.push_back(cnt);
+				cnt++;
+			}		
+			if(q.back() == v[i])
+				q.pop_back();
+			else
+			{
+				foo = false;
+				break;
+			}
+			i++;
+		}
+		if(foo)	cout << "Valid" << endl;
+		else	cout << "Invalid" << endl;
+	}
+	return 0;
+}

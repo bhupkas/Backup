@@ -1,0 +1,40 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+int main()
+{
+	string str;
+	cin >> str;
+	deque < char > s;
+	if(str.size() == 0)	
+	{
+		cout << endl;
+		return 0;
+	}
+	s.push_front(str[0]);	
+	for(int i = 1 ; i < str.size() ; i++)
+	{
+		if(s.size() == 0)	
+		{
+			s.push_front(str[i]);
+			continue;
+		}
+		if(s.front() == 'y')
+		{
+			if(str[i] == 'x')	s.pop_front();
+			else			s.push_front(str[i]);
+			continue;
+		}
+		if(s.front() == 'x')
+		{
+			if(str[i] == 'y')	s.pop_front();
+			else			s.push_front(str[i]);
+			continue;
+		}
+	}
+	for(int i = 0 ; i < s.size() ; i++)	cout << s[i] ;
+	return 0;
+}

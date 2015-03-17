@@ -1,0 +1,35 @@
+/* bhupkas */
+
+#include "iostream"
+#include "stdio.h"
+
+using namespace std;
+
+#define MAX 		100005
+#define FOR(i,a,b)	for(i=a;i<b;i++)
+
+double A[MAX+5];
+
+void pre()
+	{
+		int i,j;
+		A[1]=0.45;
+		A[2]=0.945;
+		FOR(i,3,MAX+1)	
+			{
+				A[i]=0.45*i + A[i-1]/10;
+			}
+	}
+
+int main()
+	{
+		pre();
+		int t,n,i;
+		cin>>t;
+		while(t--)
+			{
+				cin>>n;
+				printf("%0.12lf\n",A[n]);
+			}
+		return 0;
+	}

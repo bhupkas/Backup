@@ -1,0 +1,8 @@
+ IITG questions : (mostly were same as above ones few were different which are )
+1) swap 2 integer pointers
+2) print command line arguments in reverse order
+3) sizeof( union )
+4) output of a c program with static variable
+5) diff b/w calloc and malloc
+6) w.a.p. to check if sum of 2 unsigned ints overflow or not 
+7) w.a.p. to print all possible anagrams of a string

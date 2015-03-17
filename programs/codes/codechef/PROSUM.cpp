@@ -1,0 +1,39 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+typedef long long LL;
+
+const int N = 100005;
+
+int A[N],B[N],C[N];
+
+int n;
+
+int main()
+{
+	int t;
+	scanf("%d",&t);
+	LL re;
+	while(t--)
+	{
+		re = 0;
+		scanf("%d",&n);
+		for(int i = 0 ; i < n ; ++i)	scanf("%d",&A[i]);
+		B[n] = 0;
+		C[n] = 0;
+		for(int i = n - 1 ; i >= 0 ; i--)
+			if(A[i] > 1)	B[i] = B[i+1] + 1;
+			else	B[i] = B[i+1];
+		for(int i = n - 1 ; i >= 0 ; i--)
+			if(A[i] > 2)	C[i] = C[i+1] + 1;
+			else	C[i] = C[i+1];
+		for(int i = 0 ; i < n - 1 ; ++i)
+			if(A[i] == 2)	re += (LL)C[i+1];
+			else if(A[i] > 1)	re +=(LL)B[i+1];
+		printf("%lld\n",re);
+	}
+	return 0;
+}

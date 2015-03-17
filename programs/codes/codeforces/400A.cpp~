@@ -1,0 +1,54 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+typedef long long LL;
+
+string str;
+
+bool fun(int num)
+{
+	for(int i = 0 ; i < 12/num ; i++)
+	{
+		bool flag = true;
+		for(int j = i ; j < num ; j++)
+		{
+			if(str[j*(12/num) + i] == 'O')	flag = false;
+		} 
+		if(flag)	return true;
+	}
+	return false;
+}	
+
+int main()
+{
+	int n;
+	int t;
+	cin >> t;
+	vector < int > v;
+	while(t--)
+	{	
+		v.clear();
+		int cnt = 0;
+		cin >> str;
+		for(int i = 1 ; i <= 12 ; i++)
+		{
+			if(12%i == 0 && fun(i))	
+			{
+				v.push_back(i);	
+			}
+		}
+		cout << v.size() << " ";
+		for(int i = 0 ; i < v.size() ; i++)	printf("%dx%d ",v[i],12/v[i]);
+		cout << endl;
+	}
+	/*
+	cin >> n;
+	vector < int > v(n);
+	for(int i = 0 ; i < n ; i++)	cin >> v[i];
+	sort(v.begin(),v.end());
+	*/
+	return 0;
+}

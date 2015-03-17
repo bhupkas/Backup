@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+	int events[49][49],T,N,S,E,C,max[49],i,j;
+	for(j=1;j<49;j++)
+		for(i=0;i<j;i++)
+			events[i][j]=0;
+	T=readInt();
+	while(T--)
+	{
+		N=readInt();
+		for(i=0;i<49;i++)
+			max[i]=0;
+		while(N--)
+		{
+			S=readInt();E=readInt();C=readInt();
+			if(C>events[S][E])
+				events[S][E]=C;
+		}
+		for(j=1;j<49;j++)
+			for(i=0;i<j;i++)
+			{
+				if((events[i][j]+max[i])>max[j])
+					max[j]=events[i][j]+max[i];
+				events[i][j]=0;
+			}
+		printf("%d\n",max[48]);
+	}
+	return 0;
+} 

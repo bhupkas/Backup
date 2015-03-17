@@ -1,0 +1,7 @@
+
+find largest number(non negative) less than or equal to N/2 which is coprime to N.
+	input : T : test  cases (T <= 1000)
+		every line contains n >= 1 && n <= 10000000;
+	Ouput: 
+			for each test case
+			if such numbers exists output that otherwise output -1.

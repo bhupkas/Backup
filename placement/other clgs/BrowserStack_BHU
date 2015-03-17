@@ -1,0 +1,28 @@
+IITBHU browserstack written round questions. Duration: 3 hours, Platform: HackerEarth
+1. Given a piece of code, the task was to remove all the comments from the code.
+Eg. Input
+int main(){
+// this is a comment
+int i = 1;
+/*
+some more
+comments
+*/
+cout<<i;
+cout<<endl; // this is for new line
+return 0;
+// last one
+}
+Output:
+int main(){
+int i = 1;
+cout<<i;
+cout<<endl;
+return 0;
+}
+2. Given two JSON objects, find the values of fields. whose values are different.
+Eg. Input 
+{"Geeks":"Test1","Are":"hey","Cool":"yeah"}
+{"Geeks":"Test1","Are":"20","Cool"'B','C']}
+Output:
+Are:Cool

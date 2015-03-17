@@ -1,0 +1,28 @@
+/* bhupkas */
+
+#include"iostream"
+#include"algorithm"
+#include "assert.h"
+using namespace std;
+#define LL 	long long 
+LL gcd(LL n,LL m)		
+	{
+	if(m==0)	return n;
+	return gcd(m,n%m);
+	}
+int main()
+	{
+	LL t,n,ans=0,i;
+	cin>>t;
+	while(t--)
+		{
+		cin>>n;
+		assert(n<=1000000000000LL && n>=1);
+		for(i=n/2;i>=0;i--)
+			{
+			if(gcd(n,i)==1)	{cout<<i<<endl;	break;}
+			}
+		if(i==0 && n!=1)	{cout<<"-1"<<endl;}
+		}
+	return 0;
+	}

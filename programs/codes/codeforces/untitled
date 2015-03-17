@@ -1,0 +1,22 @@
+#include"iostream"
+#include"stdio.h"
+#include"vector"
+#include"algorithm"
+#include"set"
+#include"map"
+#include"math.h"
+#include"string.h"
+#include"string"
+#include"stdlib.h"
+using namespace std;
+#define FOR(i,a,b)	for(i=a;i<b;i++)
+typedef long long int LL;
+void pre()	
+	{
+
+	}
+int main()
+	{
+		pre();
+		return 0;
+	}

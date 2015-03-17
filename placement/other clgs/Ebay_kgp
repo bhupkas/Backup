@@ -1,0 +1,13 @@
+Format same as above.
+Coding questions 
+Q1 - whoever attempted please update 
+Q2
+Print all substrings of a given string.(Remove possible duplicates although it wasn’t explicitly mentioned). 
+for example input-abc
+output-
+a
+ab
+abc
+b
+bc
+c

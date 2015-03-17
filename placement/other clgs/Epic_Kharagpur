@@ -1,0 +1,15 @@
+2 min 10 question (speed round)
+75 mins for 34 questions (14 maths + 20 based on a new language (extremely easy))
+2 hrs for 4 coding questions(any language + pseudo code allowed,no compiler provided)
+(i) find the runs in a number. by storing the digits and a run is defined as a subsequence of the digits array of minimum 
+length 3 and 
+(a) the subsequence should be increasing and consecutive eg(456) not 457
+(b) shouldnt be overlapping
+
+(ii) merge 2 sorted arrays without duplicates.
+
+(iii) a checkers game and find maximum number of jumps from a given position
+
+(iv) a sequence of digits was given and to each digits some letters were mapped with 0 and 5 pointing to null character
+
+find all the possible messages corresponding to the sequence of digits.

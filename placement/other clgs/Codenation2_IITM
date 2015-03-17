@@ -1,0 +1,11 @@
+1. Given two numbers x and n, a number d is special divisor of x if d divides x but d^n does not. Assume a function S(x, n) gives number of special divisors of x. 
+Given x, p and n. Calculate S(x,n) + S(x+1,n) +...S(x+p,n)
+2. A bunch of friends decide to go on a road trip, they plan to share the driving (or something like that). A road trip consist of a straight road with milestones denoting distance from the starting position.
+Given the road, number of friends, and total distance to cover, find the best possible distribution of driving, i.e. list of milestones where they should switch drivers such that it maximises the distance covered by the guy who drives for the shortest distance among all. And obviously, number of milestones > number of friends in input, and number of switches would be equal to (number of friends - 1).
+Edit:
+You need to only print the distance covered by the guy who drives for shortest duration.
+Ex 
+Input: milestones, number of friends, total distance to cover
+{10, 15, 20, 25, 30}, 4, 40
+Output: 10
+they switch at 10, 20, 30 (this way each gets to drive 10 kms)

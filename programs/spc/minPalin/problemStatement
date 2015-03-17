@@ -1,0 +1,9 @@
+Break strings into min no of palindromic continuous substrings.
+			find out min no of such palindromic substrings
+		input : T : test cases (T <= 100)
+				next T lines contain a string s (length of s <= 2000)
+		Output : as given in the problem statement.
+	
+	
+IMPORTANT: please do test if greedy wrong solution is passing or not.
+			I have not tested this.

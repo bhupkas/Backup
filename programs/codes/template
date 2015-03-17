@@ -1,0 +1,39 @@
+#include <vector>
+#include <list>
+#include <queue>
+#include <map>
+#include <set>
+#include <stack>
+#include <bitset>
+#include <algorithm>
+#include <sstream>
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+#define FOR(i,a,b) for(i=a;i<b;i++)
+#define PB push_back
+#define I insert
+#define so(v) sort(v.begin(),v.end())
+
+typedef long long LL;
+typedef vector <int> vi;
+typedef vector <LL> vll;
+
+class <%:class-name%>
+{
+	public:
+		<%:return-type%> <%:method-name%>(<%:param-type-list%>);
+};
+
+<%:return-type%> <%:class-name%>::<%:method-name%>(<%:param-list%>)
+{
+	<%:set-caret%>
+}
+
+<%:testing-code%>
+//Powered by [KawigiEdit] 2.0!
+

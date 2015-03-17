@@ -1,0 +1,32 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+typedef long long LL;
+
+int main()
+{
+	int t;
+	cin >> t;
+	string str;
+	LL ans,temp;
+	while(t--)
+	{
+		cin >> temp;
+		ans = 0;
+		temp = 0;
+		cin >> str;
+		for(int i = 0 ; i < str.size() ; ++i)
+		{
+			if(str[i] == '1')
+			{
+				temp += 1;
+				ans += temp;
+			}
+		}
+		cout << ans << endl; 
+	}
+	return 0;
+}

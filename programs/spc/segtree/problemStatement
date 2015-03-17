@@ -1,0 +1,13 @@
+ 
+ Given an array of n (n <= 100000) numbers. You will be N opeartions (N <= 100000) query or update operations. each query operation will be of kind , "query a b" , output of which
+  should be no of  prime numbers in the range a to b.
+	each upadate opeartions which will of type "update a b" , which means value of array[a] = b;
+	( a and b >= 0 && <= 10^5)
+	
+	Input : T : no of test cases (T <= 3)
+		n , N
+		next n lines will contain elements of the array.
+		next N lines will have query or update operations as mentioned.
+
+	Ouput:
+		as mentioned above.

@@ -1,0 +1,66 @@
+DIRECTi
+setbits
+given an array of 10000000 bits.
+you are asked to perform operation 'flip bits' on the bits.
+then divide the bits into grups of 4 and covert each of the 4 bits to hex
+so we get 2500000 digits
+count the frequency of each hex digit and distplay the frequencies.
+INPUT
+n      //number of test cases
+m    //number of times the flip bits operation is performed
+x y   // the range if bits in which the operatiion is performed
+.
+.
+.
+m times
+
+OUTPUT
+16 numbers showing frequency of hex digit
+
+
+colorknapsack
+same problem as 0-1 knapsack
+but you were also given an array c[n] that had the color of items that were to be picked.c[i] had the color of ith item. An input m was given that were the possible colors( from 1...m)
+eg if m is 3 and n is 7
+then c[] can be {1 2 3 2 3 1 1 }
+you had to choose items such that all items chosen had different colors.
+other inputs of 0-1 knapsack were as it is. 
+OUTPUT
+print the vacancy value of the knapsack.
+eg if given W=50, but you were able to fill it up to only 48
+the print 2
+
+
+Given N stones, labeled from 1 to N. The i-th stone has the weight W[i]. There are M colors, labeled by integers from 1 to M. The i-th stone has the color C[i] ( between 1 to M, inclusive).
+The Knapsack can hold a total weight of X. Fill knapsack with these stones. we have to select exactly M stones; one of each color.
+sum of the weights of the stones must not exceed X. 
+We have to fill the Knapsack as much as possible.(hence minimize unused capacity.)
+Input
+number of test cases. 
+The first line of each test case contains three integers, N, M and X, 
+The N integers, W[1], W[2], W[3] ... W[N], (Weight )
+N integers C[1], C[2], C[3] ... C[N],
+Output the unused capacity of the Knapsack (a single integer on a line by itself) for an optimal way. If there is no way to fill the Knapsack, output -1. 
+Constraints
+1 ≤ T ≤ 10
+1 ≤ M ≤ 100
+M ≤ N ≤ 100
+1 ≤ W[i] ≤ 100
+1 ≤ C[i] ≤ M
+1 ≤ X ≤ 10000
+Sample Input
+3(test cases)
+9 3 10(1 st test)
+2 3 4 2 3 4 2 3 4(wt)
+1 1 1 2 2 2 3 3 3(color)
+9 3 10(2nd test )
+1 3 5 1 3 5 1 3 5(wt)
+1 1 1 2 2 2 3 3 3(color)
+3 3 10(3rd test)
+3 4 4(wt)
+1 2 3(color)
+Sample Output
+0
+1
+-1
+Note: brute-force solution will fail.

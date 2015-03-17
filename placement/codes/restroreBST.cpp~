@@ -1,0 +1,77 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+struct node
+{
+	int data;
+	struct node * left;
+	struct node * right;
+};
+
+typedef struct node Node;
+
+Node * t1 , * t2;
+
+Node *prev,*curr,*last,*first;
+
+void traverse(Node * root)
+{
+	if(root == NULL)	return;
+	traverse(root -> left);
+	if(prev != NULL && root -> data < prev -> data)
+	{
+		if(first == NULL)
+		{
+			first = prev;
+			curr = root;
+		}
+		else
+		{
+			last = root;	
+		}
+	}
+	prev = root;
+	traverse(root -> right);
+}
+
+void print(Node * root)
+{
+	if(root == NULL)	return;
+	print(root -> left);
+	cout << root -> data << " ";
+	print(root -> right);
+}
+
+struct node* newNode(int data)
+{
+    struct node* node = (struct node *)malloc(sizeof(struct node));
+    node->data = data;
+    node->left = NULL;
+    node->right = NULL;
+    return(node);
+}
+
+int main()
+{
+	struct node *root = newNode(6);
+    root->left        = newNode(10);
+    root->right       = newNode(2);
+    root->left->left  = newNode(1);
+    root->left->right = newNode(3);
+    root->right->right = newNode(12);
+    root->right->left = newNode(7);
+ 
+    printf("Inorder Traversal of the original tree \n");
+    print(root);
+ 
+
+	first = prev = curr = last = NULL;
+	traverse(root);
+	if(last != NULL)	swap(first -> data , last -> data);
+	else			swap(first -> data , curr -> data);
+    printf("\nInorder Traversal of fixed the tree \n");
+	return 0;
+}

@@ -1,0 +1,61 @@
+/* bhupkas */
+
+#include "stdio.h"
+#include "math.h"
+#include "algorithm"
+#include "string.h"
+#include "iostream"
+#include "map"
+#include "vector"
+
+using namespace std;
+
+bool check(int i,int j,int border1,int border2)
+{
+	if(i>=border1 || j>=border2)	return false;
+	else				return true;
+}
+
+#define FOR(i,a,b)	for(i=a;i<b;i++)
+#define LL		long long
+#define PI		pair<int,int>
+#define PB		puah_back
+#define I		insert
+
+int main()
+{
+	int x,y,t,i,j,n,m,k,B[100][100],ans;
+	cin>>t;
+	while(t--)
+	{
+		ans=0;
+		cin>>n;
+		cin>>m;
+		cin>>k;
+		FOR(i,0,100)	FOR(j,0,100)	B[i][j]=0;
+		FOR(i,0,k)
+		{
+			x=0;
+			y=0;
+			while(x!=n-1 || y!=m-1)
+			{
+				if(!check(x+1,y,n,m))		y++;
+				else if(!check(x,y+1,n,m))	x++;
+				else if(B[x+1][y]<B[x][y+1])	x++;
+				else				y++;
+				B[x][y]++;
+			}
+		}
+		FOR(i,0,n)
+			{
+				FOR(j,0,m)
+					{
+						if(i==0 && j==0)			continue;
+						else if(i==n-1 && j==m-1)		continue;
+						else					ans=max(ans,B[i][j]);
+					}
+			}
+		cout<<ans<<endl;
+	}
+	return 0;
+}

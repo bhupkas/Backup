@@ -1,0 +1,12 @@
+Company: Amazon
+IIIT Delhi ( These are online + interview questions )
+1. In a 2-D sorted matrix with element sorted row-wise(top to bottom) and column-wise(left to right), write an optimal program to find a particular element.
+2. reverse a linked list without recursion and with recursion(using 2 and single pointers respectively).
+3. For a binary tree, print the elements in level order starting at last level up to level 0.
+4. Find an unique element in a sorted array which have all the elements occuring exactly twice except one(find this element). Give an optimal solution.
+5. rotate sorted array by an input value K efficiently.
+6. Addition of 2 binary numbers given as an input in 2 strings.
+7. For a 2-D matrix having only binary elements(0/1), find the largest submatrix with all 1's efficiently.
+8. if you look at a binary tree from right side, then print all elements which are visible from right side veiw.
+9. Rotate the 2D matrix clockwise and anticlockwise efficiently.
+10. Find a longest common subsequence in given 2 input arrays.

@@ -1,0 +1,15 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int main()
+	{
+	int t,n,sign;
+	scanf("%d",&t);
+	while(t--)
+		{	
+		scanf("%d",&n);
+		sign = n >> (sizeof(int) * 8 - 1);
+		printf("%d\n",sign);		
+		}
+ 	return 0;
+	}

@@ -1,0 +1,641 @@
+Adobe Experience - Archit
+The Written round was of 2 hrs 45 mins and had 3 sections: Quant and LR, C ,Engineering.
+The first section was pretty typical.Quant was very easy, but LR was a bit tough and required time. There were 45 minutes for Quant(30 questions) and LR(15 questions).I would suggest that spend 15 minutes on LR and after that start doing quant and then you can come back to LR if the time permits. The next two sectons start immediately after the first section finishes. The questions were pretty typical,like finding gcd, reverse linked list etc.
+ 
+After that,the shortlisted candidates were invited to Adobe's office in Noida.
+ 
+Interview Round 1:
+ 
+1.Some questions of OS like what is virtual memory,difference between thread and process.
+2.You are given a pointer to an array of pointers.Allocate memory for this(size of array is given,along with type of pointer).I was asked to optimize to use 1 malloc only and rearrange the pointers. Some variations were done as to what will change if pointers are pointing to char, or if instead of giving type of pointer,only a pool of memory is given.
+3.There is a NXM grid of pixels,and each pixel is represented by 3 bits,1 each for R,G and B color values.You are given the address of beginning of grid in a character pointer,and a position x,y on the grid.You have to change that positions bits to some other given bits.
+ 
+Interview Round 2:
+Only 1 question was asked in this round.
+ 
+1.You are given a long essay of words, and two strings A and B. You have to replace every occurence of A in the Essay wih B.Wrote the full code.
+ 
+Interview Round 3:
+This was taken by a senior technical lead.
+ 
+1.Find all permutation of a given string.
+2.You are given an infinitely big number which is coming as a stream of bits(0 and 1), and when a 2 comes,it signifies the end of the number.You have to tell if the number is a multiple of 5.
+3.Some OOPS concepts,like virtual function,static function etc.
+ 
+HR Round:
+Was asked typical HR questions.
+Dunno what went wrong here,was rejected after this.
+ 
+Adobe Experience: Aarushi Jain
+ 
+Written round: Same as Archit
+ 
+Interview 1: (1 hour)
+ 
+ 
+Q1: Given a function rand() which generates a random number b/w 1 to 7 with an equal probability, i.e 1/7 use this function to generate a number b/w 1 to 5 with  equal probability i.e 1/5.
+ 
+ 
+Q2: What are priority queues? Their implementation and applications?If you are given the following data structures to implement priority queues:
+-Unsorted array
+-Sorted array
+-Balanced BST  
+with the operations for the PQ being:
+-Insert
+-Find min
+-Delete min
+ 
+ 
+Write the time complexities for each operation corresponding to each data structure.
+Optimise your solution to make find min in unsorted array, delete min in sorted array and find min in Balanced BST O(1).
+ 
+ 
+Q3: Write recursive solution to find fibonacci number? Draw recursion tree and analyse running time of the algorithm. How can you improve this?What is tail recursion?
+ 
+ 
+Q4: WAP to find if a loop exists in a linked list, and if it does, return the starting node of that loop.
+ 
+ 
+Q5: Allocate memory to a 2-D matrix using malloc().Allocate contiguous blocks for each row and optimise such that program has only 2 mallocs().
+Q6. How is malloc() implemented?
+ 
+ 
+Interview 2: (1 hour)
+Q1. Explain your internship project.
+ 
+ 
+Q2. Have you wondered that when you press the lift button to go above/below how it is decided out of the n available lifts serving various requests, going up/down which one will stop on your floor?Write a complete program for this, designing the lift structure and all, cover all test cases.
+ 
+ 
+Q3. Given an unsorted array find a given element in it. I gave the normal solution of linear search. In each iteration there were 2 comparisons being made, he wanted me to optimise code to one comparison per iteration. 
+ 
+ 
+Q4. OS intensive questions:
+a. What happens when you write a hello world program? Explain step by step.
+b. Difference b/w statically linked libraries and dyanamically linked libraries? I explained the advantage of DLLs using the example of 2 instances of the process being run simultaneously in memory.
+c. What is thrashing? How do you solve this problem?
+d. When I open 2 instances of MS Paint application what exactly happens?
+e. Why do we need non contiguous memory allocation in a system with very few programs that are usually run.
+f. What difference does a user observe when we use a thread instead of a process for some application, in a) multiprocessor system b) uniprocessor system.
+g. Why is relocation of code important? How do we do it?
+h. Why is virtual memory needed? Why is it needed if you exclude the advantage of the illusion of an increased memory space seen by the programs?
+i. Difference b/w compiling and linking? 
+ 
+Q5. When we do : 
+int a;
+int *b=&a;
+Does b contain a local or a physical address? Why local address, what's the advantage?
+ 
+ 
+Interview 3: (With Director) 40 mins
+ 
+ 
+Q1. Why should I select you? What sets you apart from other candidates?
+Q2. What is priority inversion? What problem are we solving here?
+Q3. Design an elevator, using OOPS concepts. How will it service requests?
+Q4. Write a copy constructor for a given class. (Concept of deep copy and shallow copy used), write code for assignment operator overloading.
+Q5. Diff btw const char *p, char const *p, char * const p etc.
+Q6. Determine size of integer without using sizeof(). Use this to change an integer such that its LSB becomes MSB, 2nd last bit becomes 2nd bit etc. -
+Make 3 changes to this program so that program now converts a big-endian value to little-endian.
+Q7. Use bitwise operations to check if a number is power of 2?
+ 
+ 
+HR Interview: (15-20 mins)
+1. What is your role as  Director at CSI NSIT?
+2. What are the 3 things you look for the most in your ideal company?
+3. How can our recruitment process be improved?
+ 
+ 
+Amazon Experience - Tusshar
+ Online Round on Hackerrank for 90 minutes
+2 coding questions and 20 MCQ questions from topics c input output, quant/puzzles, operating system, complexities of some algorithms,etc.
+ 
+1st Coding Question : Given some intervals containing starting time and ending time, merge the times if they overlap and print the intervals that are left in the end.
+ 
+2nd Coding Question : Given a 2d matrix containing positive integers which are points and -1. Start from 1,1 and go till n,n by moving down and right only. You can not go to a location which has -1. Find the maximum points that can be acquired to reach n,n. If not possible to reach n,n print -1.
+ 
+F2F 1st round
+Some discussion on my projects. Followed by 2 techical questions.
+1. Given a number n, print all the possible sum combinations for it, without repetition.
+e.g. for n=4
+1 1 1 1
+1 1 2
+1 3
+2 2
+ 
+2. Given a nxn matrix, rotate it by 90 degree in-place. Space complexity O(1).
+ 
+F2F 2nd round
+Discussion on my solutions from the online round coding questions. Followed by 2 technical questions.
+ 
+1. Given a matrix mxn containing integers where each row is sorted, select exactly one integer from each row such the the range of selected integers is minimized. i.e. Max(selected numbers) - Min(selected numbers) is minimizes.
+ 
+2. Given a matrix mxn containing integers not greater than k(k
+ 
+F2F 3rd round
+Interviewer asked about the projects and intern. Asked me to select my favourite project and then had extensive discussion on the project. Then he asked me 2 algo qsns.
+1. Find the nodes at distance k from the given node(not necessarily root) in a binary tree.
+2. Stock Span Problem
+http://www.geeksforgeeks.org/the-stock-span-problem/
+He then asked me if I had experience with OOPS to which I said no.Then he asked me few basic questions on OS.
+Deadlock conditions.
+Threads and where I can use them in normal algorithmic problem.
+How will I synchronize those threads.
+Difference between process and threads.
+Paging and page replacement techniques.
+Implementation of LRU.
+ 
+ 
+F2F 4th round(Bar Raiser Round with Senior Manager)
+Introduction.
+Why do you want to join amazon?
+What is the thing you like most about amazon.
+Followed by three technical questions.
+1. How can we know time taken by client after entering the url till the web page loads. We need to find the time from the server side.
+2. Find the first circular tour that visits all petrol pumps
+http://www.geeksforgeeks.org/find-a-tour-that-visits-all-stations/
+3. Design the data structure and algorithm to implement the feature "Customers Who Bought This Item Also Bought" on amazon.
+ 
+Amazon Experience - Vipul
+ 
+Online Round on Hackerrank for 90 minutes
+2 coding questions and 20 MCQ questions from topics c input output, quant/puzzles, operating system, complexities of some algorithms,etc.
+ 
+1st Coding Question: A magic number is defined as a number which can be expressed as a power of 5 or sum of unique powers of 5. Find the nth Magic number.
+[ Eg: 5, 25, 30 (5 + 25), 125, 130 (125 + 5),.... ]
+ 
+2nd Coding Question: Print all the leftmost nodes at each level in a binary tree.
+ 
+F2F 1st Round
+1. Given a matrix mxn containing integers where each row is sorted, select exactly one integer from each row such the the range of selected integers is minimized. i.e. Max(selected numbers) - Min(selected numbers) is minimized. He asked the algo first and then asked me to code it.
+ 
+2. Given an array containing only 0s and 1s. Sort the array using only one iteration of the array and O(1) space.
+ 
+Adobe Experience - Vipul
+ 
+Written round: Same as Archit & Aarushi
+ 
+F2F 1st round
+He first asked me to tell me about myself.
+ 
+1. OS intensive questions (about 35-40 Mins)
+He asked me about Virtual Memory, Virtual Memory Addressing, Limits of Virtual memory (Dependence on the System) , Usage of Virtual Memory, Paging, Allocation of memory to a process, Process' view of its own memory.
+ 
+Then he asked me this question.
+Program A:
+...
+int a=10;
+int* ptr = &a;
+ 
+//then we write the value of ptr in a file F1
+ 
+wait();
+...
+ 
+Program B:
+...
+int *ptr1;
+//read the value of address saved in file F1 by Program A into ptr1
+ 
+*ptr1=20;
+ 
+wait();
+...
+ 
+He asked what will be the effect on the value of variable 'a' in Program A after this with proper explanation.
+ 
+2. Design a system for storing a large no. of images which can be searched by a user on the basis of Height and Width of the image. He told me to design the Data Structure that I'll use, how do I process the queries from the users and How do I add more Images to my search system?
+ 
+3. There is an image of having NXM pixels, and each pixel is represented by 3 bits,1 each for R,G and B color values. You are given the pixels correspoding to the vertices of a trapezoid in the image and you have to copy the trapezoid part into a blank image.Then he changed the question to: Make all the pixels that are outside of the smallest rectangle that encloses the trapezoid in the new image to r=0, g=0 and b=0 values.
+ 
+I answered 1st and 3rd questions well, except the 2nd where my answer was not good.
+ 
+ 
+F2F 2nd round
+ 
+1. Asked me about a project of mine. Interrupted me in between when I was explaining it to him.
+ 
+2. How to detect a cycle in a graph?
+ 
+3. You are given a mXn 2-D array which is obviously 1-D allocated in the memory, with each element having a size of 3 bytes. This array is 4-byte padded in each row i.e. if the size of a row is not a multiple of 4 bytes, some extra bytes are added in the end of the row to make it a multiple of 4 (these bytes contain junk values and are not to be read). You are given a char* which points to the start of the array.
+- Find the size of the array.
+ 
+You are given a function Binarize() which takes the byte corresponding to a color and returns a bit. Each of the 3 bytes correspond to the R,G,B values of a color, separate them, pass them to the function Binarize() and then store these bits(in the order r,g,b) in another 2-D array which is 8-bit(1-byte) padded in each of the rows.
+ 
+I was asked to code this. I was not able to figure out in time how to store the bits in the second array with a 8-bit padding.
+ 
+4. What is virtual memory?
+What will happen if we do a 2GB malloc in a program when we have 1GB RAM?
+ 
+Adobe experience - Rishul Aggarwal
+ 
+Written round has already been described.
+ 
+F2F Round 1: 
+ 
+1. Tell me about yourself. What are your favourite subjects?
+2. What is the difference between threads and processes?
+3. For uniprocessor environment, will you use multithreading or multiprocessing? Why? Give real life example.
+4. Write the code to delete a node from a BST. Assume node exists in the given tree. (He wanted code and  not     algorithm or pseudo-code). Structure of the node was:
+ 
+struct node { void* data; struct node*left,*right;};
+5. How will you free the node in above code while deleting the node? How to free the void pointer? What if void pointer points to another pointer or data structure? How will you ensure no dangling references are left?
+ 
+F2F Round 2:
+ 
+1. Tell me about yourself. What are your favourite subjects? What is the difference between threads and processes?
+2. What projects have you done? 
+3. Questions on both projects I had done. Details and implementation and applications.
+4. A binary tree has following structure: struct node { int data; struct node*left,*right,*next}; . For every node, next points to the next node in its level. For last nodes of each level next is NULL. Write a code to populate all next pointers. Expected complexity was O(n) Time and space was not mentioned. 
+5. Can we do previous question recursively?
+ 
+Points to be noted: Adobe asks a lot of OS questions along with pointers in C and OOPS concepts. But data structure questions and algorithms can also be asked so be prepared. For written test, do quant first and then do LR section. Please do have a look at previous year questions for the C/Engineering paper. I had done all prev year papers and I even remembered answers to the questions which were repeated. (Close to 60-70% questions were repeated).
+ 
+ 
+Amazon experience - Rishul Aggarwal
+ 
+Online test had 20 MCQs & 2 coding questions (same as Vipul). I did both questions and around 14-15 MCQs correctly. There was negative marking in MCQs. In general, do both questions and more than 10 MCQs correctly to get shortlisted. 
+ 
+F2F Round 1 (50 minutes) :
+ 
+1. Tell me about yourself.
+2. What projects have you done?
+3. Questions related to my project. Asked to implement a variation of my project in C. Write code for it.
+4. In a stream of words, you need to find the top 10 trending words at any given instant. (similar to Twitter). Asked to provide only algorithm/idea. Further optimizations were asked.
+ 
+F2F Round 2 (45 minutes) :
+ 
+1. Tell me about yourself.
+2. What have you failed at?
+3. Given a sorted array containing only 0s & 1s, find number of zeros in the array. (Serious question, not a joke :P).
+4. I solved above question iteratively, then he asked me to do it recursively (strange!).
+5. As you know the main memory is limited, so instead of keeping all records in the database in the memory, we keep only certain number of most recently accessed records in the memory. Give an algorithm to find a record in the database when a query comes. Also you need to keep the main memory updated with most recently accessed records (This is simply an LRU cache).
+ 
+Points to be noted: Do GeeksForGeeks and get employed at Amazon. As simple as that.
+ 
+CodeNation experience - Rishul Aggarwal
+ 
+Online test: Had 3 questions.
+ 
+1. Given an A.P with first term A & common difference D & a G.P with first term B & common ratio R, given all terms of both series are less than lim, how many common terms do both series have? Constraints were 1
+ 
+2. Starting from 0, you need to get to number N. You can add 1 or multiply by 2 at each step. How many min. steps can you take? Constraints: N
+ 
+3. A dynamic programming question. Really long so don't remember word to word.
+ 
+Interviews took place on Skype/Google hangout.
+ 
+Round 1 (1 hour): Design a soccer management system for a camp which can be used by the coach to find out the best 11 players at the end of the camp. Constraints were that every player should play with every other player atleast once & at every position (fwd, mid, defend, goalkeeper) atleast once. Had to design the UI screens, the database tables, the calculation engine & algorithms.
+ 
+Round 2 (1 hour): Given a notepad where the user can only type new chars, move left/right with arrow keys & delete chars by pressing delete, design a data structure for efficient update & delete. Further asked to design an algorithm to display the text in justified aligning. Lot of discussion on optimization of space & time & further improvements.
+ 
+Round 3 (30 minutes with CEO):
+1. Tell me about yourself.
+2. What is the biggest technical challenge you have faced yet?
+3. Questions on projects. Minute details asked. This is the point where I fared badly.
+4. Why did you choose PHP & not Ruby on Rails? Further details on project.
+5. What do find different in trilogy as compared to other companies?
+ 
+ 
+Flipkart experience - Rishul Aggarwal
+ 
+Online Round: 90 minutes 2 questions
+ 
+1. Given capacity of knapsack & weight of every item, you need to find maximum number of items you can collect.
+2. No one was able to completely solve the 2nd question. Recursion passed 5/9 test cases.
+ 
+Those who solved first completely & passed 5/9 in 2nd question were shortlisted. 15 out of 80 odd were shortlisted.
+ 
+Machine Round: 90 minutes 2 questions
+ 
+1. Given two signals you need to perform logical OR of the signals & print the resulting signal. Signals were given as ranges in which they are high. Basically it was merging overlapping intervals type of a question.
+ 
+2. A really long question. Given a string, you had to construct a binary tree first, then find product of all nodes at k distance from a given node in that tree. Tree had to be constructed recursively & string had left, right brackets to indicate subtrees. All code had to be self written. Structure of tree was -> class node { int value; node left,right;}; .
+ 
+After this round 3/15 were shortlisted.
+ 
+F2F Round 1 (45 minutes)
+ 
+1. Allocate meeting rooms given schedules of employees to minimize the total no. of rooms.
+2. A topological sorting problem. I deduced it directly so he moved on to next question.
+3. Number of ways to represent n as sum of positive numbers greater than k.
+ 
+F2F Round 2 (45 minutes)
+ 
+1. Algorithm to implement LRU, LFU & FIFO caches. Optimizations were asked.
+2. Design data structures to predict URL when user enters a part of the URL in search bar listed based on how frequently he accesses that URL or title of the webpage. (Tries was the ans).
+3. In a binary tree, print all connected paths having sum of nodes lying on the path equal to k.
+ 
+F2F Round 3(60 minutes)
+ 
+This was the most intense round & I was asked everything that I could possibly think of. Operating systems, DBMS & since I mentioned about interest in Machine Learning, he delved deep into it & the discussion carried on for about 15-20 minutes. In OS, he asked about paging, fragmentation. In dbms, normalization, give real life example of 3NF. About my projects also there was some discussion. Some discussion about competitive programming, what errors you face in it, types of runtime errors, why segmentation fault, why recursion can overflow stack, is recursion machine dependent. All in all a very intense round.
+ 
+ 
+DE Shaw experience- Rishul Aggarwal
+ 
+Written test: There were three papers of 60 minutes in total. Each paper was of 20 min duration. You can’t come back to a paper after 20 min.
+ 
+First paper had 20 aptitude questions. Second paper had 20 questions on C/Java/OS/DBMS & algorithms. Third paper had an algorithmic question for which algo or code was to be written.
+Question was: Given records of sales for some years as follows:
+ 
+1995-1999 -> 2
+1996- 2000 ->3
+2001-2003 -> 4
+ 
+You need to tell maximum sales for every year. 1995->2, 1996->3, 1997->3, 1998->3 & so on..
+ 
+Aptitude questions were really long & doing 4-5 out of 20 was more than enough. 10-12/20 in second paper & doing the third paper well gets you shortlisted. This is however dependent on level of questions & can’t be generalized.
+ 
+Around 12-15 were shortlisted for interviews.
+ 
+F2F Round 1 (40 minutes):
+1. What all languages are you comfortable with? What subjects you like? Are you comfortable with C++?
+2. What is virtual function & how is it implemented?
+3. A class ‘car’ has been declared & a function func(car c) is declared. The function is called as func(Mycar); where Mycar is object of type car. What happens during calling? What if some members of Mycar are modified in func? What if Mycar contains a char pointer?
+4. How can we avoid shallow copy of pointers?
+5. Copy constructor.
+6. Given an integer, return a string representing the number in Indian numeral system. What are the edge cases you can think of?
+7. Write an algorithm to check if given binary tree is a mirror tree.
+ 
+F2F Round 2 (HR) (30 minutes):
+ 
+1. Walk me through your resume. (Concentrate on achievements & hobbies).
+2. What is latest thing in technology? (I had mentioned about interest in latest gadgets.)
+3. Will you fight 100 duck sized horses or 1 horse sized duck?
+4. Any plans for higher studies?
+5. Any plans for opening your own startup?
+ 
+After these 2 rounds six were shortlisted.
+ 
+F2F Round 3 (50 minutes):
+ 
+1. There are some villages in a district connected by roads. All villages can be reached from each other. The govt. needs to minimize the cost of laying roads so that villages still remain connected. What algorithm can be used? (Standard MST problem).
+2. Asked to explain Kruskal’s algorithm with an example.
+3. Questions on projects.
+4. Given a binary tree, you need to find all ancestors of given node without recursion in O(n) time.
+5. How will you find loop in a linked list? Provided various approaches & at the end gave the slow fast pointer method.
+6. Will the pointers method work if first ptr is moved by 2 steps & second by 3 steps? Which of the variations is faster then?
+7. Asked to identify two complicated declarations.
+8. An SQL query which used join, group by, where clauses & aggregate functions all in a single query.
+ 
+Points to be noted: Questions asked in DE Shaw are easy but they consider other parameters also. Try to cover C++ & DBMS thoroughly.
+ 
+ 
+Directi experience - Rishul Aggarwal
+ 
+Online round had 2 easy questions. Both were solvable.
+ 
+F2F Round 1 (60-70 minutes):
+ 
+1. Same as Nishan. Remove all vertical bars except two to collect maximum water.
+2. Given a 2d array in which every entry is a number, you need to find the number which covers more than half of the array (not necessarily contiguously). Example: for following array
+ 
+   	1 2 1 1
+    2 1 1 1
+    3 3 1 2
+ 
+Answer is 1.
+ 
+3. Same as Nishan. Given two piles you have to find which player wins.
+ 
+ 
+Directi Experience - Nishan Hassan
+Online round on codechef - 90 minutes, 2 questions
+ 
+http://www.geeksforgeeks.org/directi-interview-questions/
+ 
+Out of about 100 students, 12(who solved atleast 1 question) were selected for further interviews.
+ 
+F2F round 1(90 minutes) :
+Some were called for F2F interview and others for telephonic interview. I gave telephonic interview.
+1. Given an array representing height of vertical bars, each bar has unit width and are placed consecutively. We have to find such 2 bars so that when we remove all the bars between them and fill the empty space with water, the area covered by water between them is maximized. For example :  {8, 6, 3, 6, 5, 9, 4, 6}
+ 
+                  |
+|                |
+|                |
+|  |      |     |     |
+|  |      |  |  |     |
+|  |      |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+________________________________
+0 1  2  3  4  5 6  7
+Answer is 0th and 7th bars, area would be 36.
+I gave O(n logn) solution and he was satisfied with it. Linear time solution is also possible.
+2.  Two players are playing a game, they have two piles of stones having n and m stones. A player can pick any number of stones(not 0) from any of the 2 piles, or equal number of stones from both piles. If a player cannot make a move he loses. Determine the winner.
+I solved it with DP.
+ 
+F2F round 2(90 minutes) :
+1. Given a sorted dictionary (array of words) of an alien language, find order of characters in the language.
+Input:  words[] = {"caa", "aaa", "aab"}
+Output: Order of characters is 'c', 'a', 'b'
+I gave topological sorting based solution.
+ 
+2. Given n paintings of equal height but different widths. We are provided with their starting and ending positions
+and they have been painted on the wall in the order of their index in input. Find how many painitngs are visible.
+For example :
+Let there be 5 paintings - (1, 4), (2, 6), (8, 10), (3 4), (7 10)
+4 paintings will be visible at the end.
+I first gave an O(n*W) : time and O(n*W) : space solution, where W is maximum width of wall. But width of wall could be as large as range of int. Then I gave O(n*n) and O(n*log n) solutions just at the end of interview :/
+ 
+Directi Experience - Ujjwal Relan
+Directi conducted an online test and interview process for all those who went to ICPC Regionals, for both internship and full time recruitment.
+1st Round : Online Coding Round across multiple colleges
+Two questions in 1.5 hrs. At least one of them needs to be solved completely to qualify for the interviews.
+2nd Round : Telephonic Interview (Code on Collabedit)
+1. Rank of k-length substring is given as:
+eg: If given a string, ABCTAC then rank of 4-length substrings,
+ABCT - 1234
+BCTA - 2341
+CTCA - 3431
+Explanation: There are 4 characters in it : A,B,C,T so lexicographically their rank is 1,2,3,4 and hence the rank of the above substrings.
+Find the no of k-substrings with a given rank pattern.
+2. Write the formula for total number of set bits in numbers from 1 to n.
+3.Given a binary tree, find the no of univalued subtrees.
+          7
+        /     \
+   6          5
+/     \       /    \
+6     6  8      3
+It has 5 univalued subtrees (4 leaf nodes + 1 subtree with 3 ‘6’)
+ 
+3rd Round : Telephonic Interview (Code on Collabedit)
+1. Given size N, write the code to find the number of strings that can be formed using ‘a’, ‘b’ and ‘c’ provided:
+a) At most 1 ‘b’ is used.
+b) Not more than 2 consecutive ‘a’s are used.
+2. Given a graph, Bottleneck for a pair of vertices is defined as :
+Minimum of Maximum edge of each path from source to destination
+Determine the bottleneck for each pair of vertices.
+3. Complexity of DFS for finding all possible paths from a given point.
+4th Round: Face to face interview
+1. Coding Question:
+Given a dictionary of words, give the new order of characters as per the new dictionary.
+eg: 
+efa
+efb
+esa
+afa
+fee
+baa
+saf
+This tells that the order of characters is e,a,f,b,s.
+This can be done using topological sort but mainly the code for creating the edges was required. (Basic Recursive Solution was required)
+2. Coding Question:
+Normally a keypad has keys 0-9 each with three characters on it.
+Weight of a character is defined as number of times a key needs to be pressed to type that character. For eg: if abc is present on a key then we need to press the key twice to type ‘b’ so weight of ‘b’ is 2.
+Given the frequency of each character as required by user.
+eg:
+a 2
+b 5
+c 1
+and so on
+Rearrange these characters amongst the keys such that summation of weight*frequency over all characters are minimised.
+Constraints:
+1. Each key must have atleast 1 character. It can have more than 3 chars after rearranging.
+2. The lexographical order of characters must be maintained for each key i.e a key can have a,d,f but they will present as adf not as fda or any other sequence.
+3. Coding Question:
+There are two stacks with m and n coins respectively. Two players play a game with the following possible operations:
+a) Either pick some coins from stack1, or
+b) Pick some coins from stack 2, or
+c) Pick equal no of coins from both the steps.
+Given values of m and n, tell who would win given both players play OPTIMALLY.
+Final Interview Round (Skype Interview and Code on Collabedit)
+1. In depth Project Discussion: Aim of the project and what role I had in my projects.
+2. Coding Question:
+Given heights of n trees and a certain amount of wood, reqWood, tell the maximum height at which all trees can be cut so that I get atleast reqWood amount of wood.
+For eg
+Heights:
+6 (no of trees)
+4 1 2 3 10 7   (heights)
+5 (reqWood)
+Output
+6
+I will get 4 units of wood from the tree with height 10 and 1 unit of wood from tree with height 7, if I cut at a height of 6.
+3. Detailed discussion of Google Maps:
+a) How are nodes identified in Google Maps?
+b) When Source and Destination are entered into the google maps, how is the path shown instantly?
+c) If precomputation is done, then what exactly is kept precomputed at the backend?
+d) If source and destination are known, is it required to apply Dijkstra in all four directions?
+What optimisations can be performed in this?
+Basically, possible optimisations and methods used in Google Maps were discussed.
+4. OS based questions:
+int balance; //global
+func1(int amt)
+{
+balance+=amt;
+}
+This function is called by multiple threads. What can be the problem with this code?
+What can be done to overcome it? Modify the code to counter the same.
+5. DBMS based questions:
+a. SQL query to find second maximum value of an attribute.
+b. What are Indices?
+c. What kinds of Indices are used?
+d. What are the uses of B+ Trees?
+e. Can B+ tree indexed on Name handle queries like find names beginning with “Ar”?
+f. Can it handle queries like names ending with “al”? What can be done to handle this case?
+g. How can one index based on two attributes, given that there is an equal probability of getting a query for either of the attributes?
+ 
+ 
+Adobe Experience : Amol Jindal
+ 
+1st round was a written round having three sections-
+# LR and Quant (45 minutes, 45 questions (30 quant+15 LR))
+# Rest 2 sections contains questions on C o/p, some questions like reversing a Linked List, Given a number in form of a binary string, return its 2's complement in the binary string form itself, A recursive fn. was given having printf() at several points, write its o/p, there was 1 question on Microprocessors where a assembly language code was given and we had to predict the functioning of the code, 1 question was on boolean algebra  etc...
+ 
+The most important thing is if u dont clear the cutoff for LR and Quant section, they will not check the other two sections.
+ 
+Interview Round 1:
+1. Tell me about urself
+2. Discussion on my project
+3. consider following code:
+ 
+int a ;
+int main()
+{ printf("%u\n",&a);
+}
+ 
+what will be the o/p of the above code if we run it 5 times, will it be same every time or not?
+I told him if Run time binding  is done then the o/p will be different...
+4. consider following code:
+int main()
+{ int  a=10;
+fun();
+a=5;
+printf("%d\n",a);
+}
+void fun()
+{ // do something
+}
+he ask me to write fun() in such a way that the o/p of above code is 10 instead of 5.
+I gave a solution:
+void fun()
+{ printf("10\n");
+exit(1);
+}
+then he told me to do it without exit()...
+ 
+The idea is to change the return address on the stack. To do this we have to declare a local variable in fun() as this variable will be created on stack. Then by getting the address of this variable and adding in it the  size of varibale we will get the address of return address. Then modify the return address by adding in it the size of instruction a=5;
+The intrvwr told me that the idea is correct but there is still some problem...
+5.  Given an unsorted array having all the elements distinct except one element that repeats exactly n/2 times,          return that element using minimum no. of comparisons.
+ 
+Interview Round 2:
+1. Tell me about urself
+2.  Given starting and ending coordinates (2-d) of two line segaments, tell whether the two line segaments intersect or not?
+3.  Remove all the spaces in given string and change lowercase letters to uppercase.
+4.  Reverse words in given string . eg(Hello boy ->  olleH yob)
+5.  Set the nth bit of a unsigned number and return the number. This question has a trick, the fn. should return the number as unsigned, because  if u return it simply is int, it will be assumed as signed and the value may become negative.
+ 
+Interview Round 3:
+1. Why Should we hire u?
+2. A class declaration was given, write its copy constructor. The given class had a member as char *p, so be careful with deep copy and shalow copy.
+3. Some C declarations were given and he asked me the meanings of them.
+4. Design a elevator.
+ 
+Interview Round 4:
+1. Tell me about urself.
+2. Discussion on my projects.
+3. Both of my projects were on image processing, so he gave me to write a code to check whether the given two images are same or not.
+4. He asked me to write my own malloc() and free() , the restriction was that the malloc should not give memory than a given amount at any time.
+I suggest u to write free()'s implementation of ur own for practice.
+ 
+Do prepare OS well to get into Adobe :)
+ 
+Amazon Experience : Amol Jindal
+ 
+Written Round : Same as Vipul
+ 
+Interview Round 1:
+1. Tell me about urself, discussion on my project.
+2. Given a number, print all the numbers that sum upto the given no.
+eg. given no.=4
+o/p:
+1+1+1+1
+1+1+2
+1+3
+2+2
+there should be no repitition (eg if  1+1+2 has already printed, then 1+2+1 or 2+1+1 should not get printed).
+3. Given an unsorted array, rearrange the array in such a way that the elements satisfy following property:
+a[1] is less than a[2], a[2] is greater than a[3], a[3] is less than a[4], a[4] is greater than a[5] and so on...
+ 
+Interview Round 2:
+1. Tell me about urself.
+2. Deep discussion on my internship's project, he wanted to know the goals of my project.
+3. Given a sorted array of 0's and 1's, count the number of 0's. I told him O(logn) approach. Then he asked me why this approach takes O(logn) time. Then he asked me to write both recursive and iterative versions of it.
+4. Given two binary trees, check whether they are morror images of each other.
+ 
+Interview Round 3:
+ 
+1. Tell me about ureslf.
+2. Discussion on OS concepts for 15-20 minutes. One question was: what is the maximum size of Virtual memory?
+3. Given 100 songs numbered from 1-100, and given fn. rand(n) that returns a random integer b/w 1-n, write a code to select songs one by one in a random order such that none of the song is repeated untill all the songs have been played atleast once.
+4. Given a file containing words, do preprocessing on this file such that if i give another word, the code should print all its anagrams from the file. The preprocessing step may take as much time as needed but after that, every time a word is given , its anagrams should be printed in minimum time.
+ 
+Interview Round 4 (HR + Tech):
+1. Tell me about urself.
+2. How were the previous intrvws?
+3. Why do u want to join Amazon?
+4. Then he gave 3 problems:
+# How can we know  the time it takes b/w the time we enter a url and the time the page gets loaded.
+# Given HTML or PHP(in whatever language a web page is written (i dont know web d , so i dont remember what language he told me) ) codes of two web pages, find out where these pages differ from each other? He asked me to design a Data Structure for the same. He also taught me how a web page is written as i dont know HTML.
+# Design a Data Structure to find out maximum selling product(in last 7 days) in each category on Amazon's website.

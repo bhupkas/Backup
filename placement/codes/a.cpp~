@@ -1,0 +1,97 @@
+using namespace std;
+
+#include "bits/stdc++.h"
+
+map < int , string > hmap,hmap1;
+
+string fun(int num)
+{
+        string re;
+        if(num > 20)    
+        {
+                re += hmap1[num/10];
+                re += " ";
+                re += hmap[num%10];
+                re += " ";
+                return re;             
+        }       
+        else
+        {
+                re = hmap[num];
+                re += " ";
+                return re;
+        }
+}
+
+int main()
+{
+        int num;
+        cin >> num;
+        hmap[0] = "";
+        hmap[1] = "one";
+        hmap[2] = "two";
+        hmap[3] = "three";
+        hmap[4] = "four";
+        hmap[5] = "five";
+        hmap[6] = "six";
+        hmap[7] = "seven";
+        hmap[8] = "eight";
+        hmap[9] = "nine";
+        hmap[10] = "ten";
+        hmap[11] = "eleven";
+        hmap[12] = "twelve";
+        hmap[13] = "thirteen";
+        hmap[14] = "fourteen";
+        hmap[15] = "fifteen";
+        hmap[16] = "sixteen";
+        hmap[17] = "seventeen";
+        hmap[18] = "eighteen";
+        hmap[19] = "nineteen";
+        hmap[20] = "twenty";
+        hmap1[2] = "twenty";
+        hmap1[3] = "thirty";
+        hmap1[4] = "forty";
+        hmap1[5] = "fifty";
+        hmap1[6] = "sixty";
+        hmap1[7] = "seventy";
+        hmap1[8] = "eighty";
+        hmap1[9] = "ninety";
+        string re;
+        if(!num)        
+        {       
+                cout << "zero" << endl;
+                return 0;
+        }
+        if(num / 10000000)      
+        {
+                re += fun(num / 10000000);
+                re += " ";
+                re += "crore ";
+                num %= 10000000;               
+        }
+        if(num / 100000)
+        {
+                re += fun(num / 100000);
+                re += "lakh ";
+                num %= 100000;
+        }
+        if(num / 1000)
+        {
+                re += fun(num / 1000);
+                re += "thousand ";
+                num %= 1000;       
+        }
+        if(num / 100)
+        {
+                re += fun(num / 100);
+                re += "hundred ";
+                num %= 100;
+        }
+        if(num)
+        {
+                if(re.size())  re += "and ";
+                re += fun(num);
+        }
+        cout << re << endl;
+        return 0;
+}

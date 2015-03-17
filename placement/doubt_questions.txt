@@ -1,0 +1,2 @@
+Given a million word dictionary, what is the size of the largest rectangle that can be formed such
+that each row and each column of the rectangle is a word from the dictionary.

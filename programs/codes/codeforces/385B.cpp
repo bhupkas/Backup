@@ -1,0 +1,28 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+int main()
+{
+	string str;
+	cin >> str;
+	long long  re = 0;
+	int n = str.size();
+	int last = 0;
+	for(int i = 0 ; i < (int)str.size() - 3 ; i++)
+	{
+		if(str[i] == 'b' && str[i+1] == 'e' && str[i+2] == 'a' && str[i+3] == 'r')
+		{
+			re += (long long)(n-i-3)*(long long)(i- last + 1);
+			last = i + 1;
+		}
+	}
+	cout << re << endl;
+	/*
+	cin >> n ;
+	vector < int > v(n);
+	*/
+	return 0;
+}

@@ -1,0 +1,48 @@
+/* bhupkas */
+
+#include "bits/stdc++.h"
+
+using namespace std;
+
+int n,k,A[2005],dp[2005];
+
+typedef long long LL;
+
+bool check(LL val)
+{
+	LL cnt = 1e9;
+	for(int i = 1 ; i<=n ; i++)
+	{
+		dp[i] = i - 1;
+		for(int j = 1 ; j < i ; j++)	if(abs(A[i] - A[j]) <= val*(i-j))	dp[i] = min(dp[i],dp[j] + i - j - 1);
+		cnt = min(cnt,(LL)dp[i]+n-i);
+	}
+	return cnt <= k;
+}
+
+LL bsearch()
+{
+	LL l = 0 , r = 100000000009;
+	LL mid;
+	if(check(0))	return 0;
+	while(l <= r)
+	{
+		mid = (l + r)>>1;
+		if(check(mid) && !check(mid - 1))	return mid;
+		else if(check(mid))	r = mid - 1;
+		else			l = mid + 1;
+	}
+}
+
+int main()
+{
+	cin >> n >> k;
+	for(int i = 1 ; i <= n ; i++)	cin >> A[i];
+	if(n == 1)	
+	{
+		cout << 0 << endl;
+		return 0;
+	}
+	cout << bsearch() << endl;
+	return 0;
+}

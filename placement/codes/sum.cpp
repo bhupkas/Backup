@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+void f(int n,vector<int> &ans){
+        if(n==1)
+                cout<<n;
+        for(int i=1;n-i<=i;++i){
+               ans.push_back(i);
+               f(n-i);
+               ans.pop_back();
+        }
+}
+int main(){
+        int n;
+        cin>>n;
+        vector<int> ans;
+        f(n,ans);
+
+}

@@ -1,0 +1,32 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+int sz;
+
+int A[1000005];
+
+void fun(string str)
+{       
+        sz = str.size();
+        reverse(str.begin() , str.end());
+        bool foo;
+        for(int i = 0 ; i < sz ; ++i)   
+        {
+                A[i] = str[i] - '0';
+        }
+}
+
+int main()
+{       
+        int t;
+        cin >> t;
+        string str;
+        while(t--)
+        {
+                fun(str);                
+        }
+        return 0;
+}

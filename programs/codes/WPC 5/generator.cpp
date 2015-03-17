@@ -1,0 +1,16 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+int main()
+{
+	srand(time(NULL));
+	cout << 200 << endl;
+	for(int i = 0 ; i < 200 ; ++i)
+	{
+		cout << rand() % 1000 + 1  << " " << rand() % 1000 + 1 << endl;
+	}
+	return 0;
+}

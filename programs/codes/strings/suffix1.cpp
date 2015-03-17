@@ -1,0 +1,84 @@
+/* bhupkas */
+
+using namespace std;
+
+#include "bits/stdc++.h"
+
+const int N = 100005;
+const int lN = 18;
+
+int P[lN][N];
+
+struct node
+{
+	int v1,v2,idx;
+};
+
+typedef struct node Node;
+
+Node L[N];
+
+int cnt,stp,n;
+
+bool cmp(Node N1, Node N2)
+{
+	if(N1.v1 == N2.v1)	return N1.v2 < N2.v2;
+	return N1.v1 < N2.v1;
+}
+
+string str;
+
+int findLCP (int x, int y)
+{
+    int ret = 0;
+    if (x == y)
+        return N - x;
+
+    for (int k = stp - 1; k >= 0 && x < N && y < N; k--)
+    {
+        if (P[k][x] == P[k][y])
+        {
+            x += (1 << k);
+            y += (1 << k);
+            ret += (1 << k);
+        }
+    }
+
+    return ret;
+}
+
+
+int main()
+{
+	int t;
+	cin >> t;
+	while(t--)
+	{
+		cin >> str;
+		n = str.size();
+		for(int i = 0 ; i < n ; ++i)	P[0][i] = (int)(str[i] - 'a');
+		bool foo = true;
+		for(cnt = 1 , stp = 1 ;; cnt <<= 1 , stp++ , foo = true)
+		{
+			for(int i = 0 ; i < n ; ++i)	L[i].v1 = P[stp-1][i] , L[i].v2 = i + cnt < n ? P[stp-1][i+cnt] : -1, L[i].idx = i;
+			sort(L,L+n,cmp);
+			P[stp][L[0].idx] = 0;
+			for(int i = 1 ; i < n ; ++i)
+				if(L[i].v1 == L[i-1].v1 && L[i].v2 == L[i-1].v2)	P[stp][L[i].idx] = P[stp][L[i-1].idx] , foo = false;
+				else	P[stp][L[i].idx] = i;
+			if(foo)
+			{	
+				stp++;
+				break;
+			}
+		}
+		int ans = n * (n + 1) / 2;
+
+        for (int i = 0; i + 1 < n; i++)
+        {
+            ans -= findLCP (L[i].idx, L[i + 1].idx);
+        }
+
+        cout << ans << endl;
+	}
+}

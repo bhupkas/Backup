@@ -1,0 +1,15 @@
+Epic Systems
+4 sections.
+A. Speed Calculations: 2 mins 10 questions, attend as much as u can.
+B. Apti: 12 questions
+C. Technical: 20 questions, based on some newly defined language.
+section B,C did not have any sectional time limit. But you need to finish these 3 sections within 75 mins. You will be judged on speed and accuracy. So try do complete as fast as possible.
+D. Coding: 4 questions, 2 hrs. But again you will judged based on speed and accuracy. Write functions. Pseudo codes are allowed. Its like a online version of pen and paper coding. Questions of this section was different for everyone. I am sharing my questions.
+#1. Suppose all months have 30 days. There's 12 months in a year. February would have 31 days in a Leap year. condition for leap year is defined as (year%40==0) is leap, (year%200==0) is not leap, (year%1000==0) is leap. Given a date as MM/DD/YYYY, find the next Leap Day.
+#2. Print matrix in spiral order. 
+#3. U have to print all possible combinations of phone numbers. The length of the number will be given. Also 3 digits will be given, which can not be used. No two consecutive digits would be same. A number containing 4 would always have 4 in the beginning.
+#4. Given a number, get all possible substrings using the digits of this number and if the product of digits in one subset is same with the another, then return false, else return true.
+e.g. 345={3,4,34,45,35,345}
+products are{3,4,5,12,20,15,60} hence true
+3426={3,4,2,6,34,42,26,....}
+product ={3,4,2,6,12,8,12,..} hence false. (products of 34 and 26 are same)
